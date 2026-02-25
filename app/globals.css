@@ -171,6 +171,11 @@ body {
   }
 }
 
+/* ── Primer prose — strip trailing margin from last ReactMarkdown paragraph ── */
+.primer-prose > p:last-child {
+  margin-bottom: 0;
+}
+
 /* ── Reading layout — shifts content left on desktop to make room for chat ── */
 .reading-layout {
   padding-left: 16px;

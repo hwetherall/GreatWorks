@@ -1,11 +1,37 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import type { Components } from "react-markdown";
 import type { KnowledgeLevel } from "@/lib/prompts";
 
 interface PrimerProps {
   level: KnowledgeLevel;
 }
+
+// Markdown component overrides — enforce the app's typography, no browser defaults
+const mdComponents: Components = {
+  p: ({ children }) => (
+    <p
+      style={{
+        fontFamily:
+          "var(--font-lora), Georgia, 'Times New Roman', serif",
+        fontSize: "16px",
+        lineHeight: 1.85,
+        color: "#f0ebe2",
+        margin: "0 0 1.1em",
+      }}
+    >
+      {children}
+    </p>
+  ),
+  strong: ({ children }) => (
+    <strong style={{ fontWeight: 600, color: "#f8f4ec" }}>{children}</strong>
+  ),
+  em: ({ children }) => (
+    <em style={{ fontStyle: "italic", color: "inherit" }}>{children}</em>
+  ),
+};
 
 export default function Primer({ level }: PrimerProps) {
   const [text, setText] = useState("");
@@ -124,22 +150,13 @@ export default function Primer({ level }: PrimerProps) {
           Preparing your introduction…
         </p>
       ) : (
-        <p
-          style={{
-            fontFamily:
-              "var(--font-lora), Georgia, 'Times New Roman', serif",
-            fontSize: "16px",
-            lineHeight: 1.85,
-            color: "#f0ebe2",
-            margin: 0,
-            whiteSpace: "pre-wrap",
-          }}
-        >
-          {text}
+        /* Remove the bottom margin from the final <p> so the divider spacing is clean */
+        <div className="primer-prose">
+          <ReactMarkdown components={mdComponents}>{text}</ReactMarkdown>
           {isStreaming && (
             <span className="annotation-cursor" aria-hidden="true" />
           )}
-        </p>
+        </div>
       )}
 
       {/* Divider after primer has loaded */}

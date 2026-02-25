@@ -48,9 +48,9 @@ export default function ReadingContainer() {
 
   return (
     <>
-      <Primer level={level} />
-
       <KnowledgeToggle value={level} onChange={handleLevelChange} />
+
+      <Primer level={level} />
 
       <Reader
         level={level}
