@@ -15,6 +15,7 @@ interface ReaderProps {
     lineRange: string,
     lines: { start: number; end: number }
   ) => void;
+  onChatRequest: (passage: string) => void;
   completedSections: Set<string>;
   onSectionComplete: (sectionId: string, achievements: Achievement[]) => void;
   onSectionVisible: (sectionId: string) => void;
@@ -66,6 +67,7 @@ export default function Reader({
   level,
   activeLines,
   onAnnotateRequest,
+  onChatRequest,
   completedSections,
   onSectionComplete,
   onSectionVisible,
@@ -166,6 +168,13 @@ export default function Reader({
   function handleTriggerClick() {
     if (!trigger) return;
     onAnnotateRequest(trigger.text, trigger.lineRange, trigger.lines);
+    setTrigger(null);
+    window.getSelection()?.removeAllRanges();
+  }
+
+  function handleChatClick() {
+    if (!trigger) return;
+    onChatRequest(trigger.text);
     setTrigger(null);
     window.getSelection()?.removeAllRanges();
   }
@@ -296,42 +305,77 @@ export default function Reader({
         })}
       </article>
 
-      {/* Annotation trigger button */}
+      {/* Selection trigger buttons */}
       {trigger && (
-        <button
+        <div
           data-annotation-trigger="true"
-          onClick={handleTriggerClick}
           style={{
             position: "fixed",
             left: trigger.viewportX,
             top: trigger.viewportY,
             zIndex: 60,
-            background: "#1c1b18",
-            border: "1px solid #c9a84c",
-            borderRadius: "3px",
-            padding: "5px 13px 6px",
-            cursor: "pointer",
-            color: "#c9a84c",
-            fontFamily: "var(--font-cormorant), Georgia, serif",
-            fontSize: "14px",
-            fontWeight: 500,
-            letterSpacing: "0.06em",
-            boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
-            whiteSpace: "nowrap",
-            transition: "background 0.1s ease, color 0.1s ease",
+            display: "flex",
+            gap: "6px",
             pointerEvents: "auto",
           }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background = "#c9a84c";
-            (e.currentTarget as HTMLButtonElement).style.color = "#0d0d0e";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background = "#1c1b18";
-            (e.currentTarget as HTMLButtonElement).style.color = "#c9a84c";
-          }}
         >
-          ✦ Enrich
-        </button>
+          <button
+            onClick={handleTriggerClick}
+            style={{
+              background: "#1c1b18",
+              border: "1px solid #c9a84c",
+              borderRadius: "3px",
+              padding: "5px 13px 6px",
+              cursor: "pointer",
+              color: "#c9a84c",
+              fontFamily: "var(--font-cormorant), Georgia, serif",
+              fontSize: "14px",
+              fontWeight: 500,
+              letterSpacing: "0.06em",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              whiteSpace: "nowrap",
+              transition: "background 0.1s ease, color 0.1s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background = "#c9a84c";
+              (e.currentTarget as HTMLButtonElement).style.color = "#0d0d0e";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background = "#1c1b18";
+              (e.currentTarget as HTMLButtonElement).style.color = "#c9a84c";
+            }}
+          >
+            ✦ Enrich
+          </button>
+          <button
+            onClick={handleChatClick}
+            style={{
+              background: "#1c1b18",
+              border: "1px solid #4a4540",
+              borderRadius: "3px",
+              padding: "5px 13px 6px",
+              cursor: "pointer",
+              color: "#8a847a",
+              fontFamily: "var(--font-cormorant), Georgia, serif",
+              fontSize: "14px",
+              fontWeight: 500,
+              letterSpacing: "0.06em",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              whiteSpace: "nowrap",
+              transition: "background 0.1s ease, color 0.1s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background = "#2a2820";
+              (e.currentTarget as HTMLButtonElement).style.color = "#f0ebe2";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background = "#1c1b18";
+              (e.currentTarget as HTMLButtonElement).style.color = "#8a847a";
+            }}
+          >
+            Ask in Chat
+          </button>
+        </div>
       )}
 
       {hoveredVocab && (

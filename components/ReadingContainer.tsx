@@ -16,6 +16,7 @@ import AchievementToast from "./AchievementToast";
 const STORAGE_KEY = "greatbooks-knowledge-level";
 const READ_MODE_STORAGE_KEY = "greatbooks-read-mode";
 const DEFAULT_LEVEL: KnowledgeLevel = "noob";
+
 type ReadMode = "scroll" | "flip";
 
 interface AnnotationState {
@@ -32,6 +33,7 @@ export default function ReadingContainer() {
   const [currentSectionId, setCurrentSectionId] = useState<string | null>(null);
   const [annotationVersion, setAnnotationVersion] = useState(0);
   const [toastQueue, setToastQueue] = useState<Achievement[]>([]);
+  const [chatPassage, setChatPassage] = useState<string | null>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as KnowledgeLevel | null;
@@ -102,6 +104,10 @@ export default function ReadingContainer() {
     setAnnotation(null);
   }
 
+  function handleChatRequest(passage: string) {
+    setChatPassage(passage);
+  }
+
   return (
     <>
       <ProgressBar
@@ -157,6 +163,7 @@ export default function ReadingContainer() {
           level={level}
           activeLines={annotation?.lines ?? null}
           onAnnotateRequest={handleAnnotateRequest}
+          onChatRequest={handleChatRequest}
           completedSections={completedSections}
           onSectionComplete={handleSectionComplete}
           onSectionVisible={handleSectionVisible}
@@ -180,7 +187,11 @@ export default function ReadingContainer() {
         />
       )}
 
-      <Chat level={level} />
+      <Chat
+        level={level}
+        pendingPassage={chatPassage}
+        onPassageConsumed={() => setChatPassage(null)}
+      />
 
       <AnnotationHistory annotationVersion={annotationVersion} />
 

@@ -61,7 +61,13 @@ export async function POST(request: NextRequest) {
 
   // Cache miss — generate and cache while streaming
   const rawPrompt = cardType === "before" ? section.beforePrompt : section.afterPrompt;
-  const resolvedPrompt = rawPrompt.replace("[LEVEL]", KNOWLEDGE_LEVEL_LABELS[level]);
+  let resolvedPrompt = rawPrompt.replace("[LEVEL]", KNOWLEDGE_LEVEL_LABELS[level]);
+
+  if (cardType === "after") {
+    resolvedPrompt =
+      `Your response must open with one plain sentence — no more — that states the narrative fact: what just happened in this section, where we now are in the poem. Then continue with your insight as instructed.\n\n` +
+      resolvedPrompt;
+  }
 
   let upstream: Response;
   try {

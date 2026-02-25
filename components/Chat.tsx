@@ -10,20 +10,42 @@ interface Message {
 
 interface ChatProps {
   level: KnowledgeLevel;
+  pendingPassage?: string | null;
+  onPassageConsumed?: () => void;
 }
 
-export default function Chat({ level }: ChatProps) {
+export default function Chat({ level, pendingPassage, onPassageConsumed }: ChatProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const userScrolledUpRef = useRef(false);
 
-  // Scroll to bottom when messages change
+  // Smart scroll: only pull to bottom if user hasn't scrolled up
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (!userScrolledUpRef.current) {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
   }, [messages]);
+
+  // When a passage is sent from the reader, pre-fill the textarea
+  useEffect(() => {
+    if (!pendingPassage) return;
+    setInput(`"${pendingPassage}"\n`);
+    setMobileOpen(true);
+    setTimeout(() => {
+      const ta = textareaRef.current;
+      if (!ta) return;
+      ta.style.height = "auto";
+      ta.style.height = Math.min(ta.scrollHeight, 120) + "px";
+      ta.focus();
+      ta.selectionStart = ta.selectionEnd = ta.value.length;
+    }, 0);
+    onPassageConsumed?.();
+  }, [pendingPassage]);
 
   // Auto-resize textarea
   function handleInputChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -33,9 +55,18 @@ export default function Chat({ level }: ChatProps) {
     ta.style.height = Math.min(ta.scrollHeight, 120) + "px";
   }
 
+  function handleScrollContainer() {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    userScrolledUpRef.current = el.scrollHeight - el.scrollTop - el.clientHeight > 60;
+  }
+
   async function sendMessage() {
     const content = input.trim();
     if (!content || isStreaming) return;
+
+    // Always scroll to bottom when user sends a new message
+    userScrolledUpRef.current = false;
 
     const userMsg: Message = { role: "user", content };
     const newMessages = [...messages, userMsg];
@@ -211,6 +242,8 @@ export default function Chat({ level }: ChatProps) {
 
         {/* Messages area */}
         <div
+          ref={scrollContainerRef}
+          onScroll={handleScrollContainer}
           style={{
             flex: 1,
             overflowY: "auto",

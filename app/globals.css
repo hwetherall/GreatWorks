@@ -235,7 +235,7 @@ body {
 
 @media (min-width: 900px) {
   .reading-layout {
-    padding-right: 356px; /* 340px chat panel + 16px gap */
+    padding-right: 476px; /* 460px chat panel + 16px gap */
   }
 }
 
@@ -245,7 +245,7 @@ body {
   right: 0;
   top: 0;
   height: 100dvh;
-  width: 340px;
+  width: 460px;
   background: #0d0d0e;
   border-left: 1px solid #2a2820;
   display: flex;
