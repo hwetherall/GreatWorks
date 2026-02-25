@@ -209,3 +209,25 @@
 [2026-02-25 09:14:59] [INFO] Saved Claude session: 5fadf2dd-c664-45c6-a...
 [2026-02-25 09:14:59] [INFO] 🔍 Analyzing Claude Code response...
 [2026-02-25 09:15:01] [INFO] Ralph loop interrupted. Cleaning up...
+[2026-02-25 09:35:42] [INFO] Setting up tmux session: ralph-1772037342
+[2026-02-25 09:35:42] [SUCCESS] Tmux session created with 3 panes:
+[2026-02-25 09:35:42] [INFO]   Left:         Ralph loop
+[2026-02-25 09:35:42] [INFO]   Right-top:    Claude Code live output
+[2026-02-25 09:35:42] [INFO]   Right-bottom: Status monitor
+[2026-02-25 09:35:42] [INFO] 
+[2026-02-25 09:35:42] [INFO] Use Ctrl+B then D to detach from session
+[2026-02-25 09:35:42] [INFO] Use 'tmux attach -t ralph-1772037342' to reattach
+[2026-02-25 09:35:42] [INFO] Loaded configuration from .ralphrc
+[2026-02-25 09:35:42] [SUCCESS] 🚀 Ralph loop starting with Claude Code
+[2026-02-25 09:35:42] [INFO] Max calls per hour: 100
+[2026-02-25 09:35:42] [INFO] Logs: .ralph/logs/ | Docs: .ralph/docs/generated/ | Status: .ralph/status.json
+[2026-02-25 09:35:42] [INFO] Starting main loop...
+[2026-02-25 09:35:42] [INFO] Loop #1 - calling init_call_tracking...
+[2026-02-25 09:35:42] [LOOP] === Starting Loop #1 ===
+[2026-02-25 09:35:42] [LOOP] Executing Claude Code (Call 12/100)
+[2026-02-25 09:35:42] [INFO] ⏳ Starting Claude Code execution... (timeout: 15m)
+[2026-02-25 09:35:42] [INFO] Resuming Claude session: 5fadf2dd-c664-45c6-a... (0h old)
+[2026-02-25 09:35:42] [INFO] Using modern CLI mode (json output)
+[2026-02-25 09:35:42] [INFO] 📺 Live output mode enabled - showing Claude Code streaming...
+[2026-02-25 09:40:05] [INFO] Ralph loop interrupted. Cleaning up...
+[2026-02-25 09:40:05] [INFO] Session reset: manual_interrupt

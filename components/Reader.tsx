@@ -22,6 +22,23 @@ interface TriggerState {
   viewportY: number;
 }
 
+interface VocabCard {
+  lineNumber: number;
+  word: string;
+  definition: string;
+  etymology: string;
+}
+
+interface VocabHoverState {
+  card: VocabCard;
+  viewportX: number;
+  viewportY: number;
+}
+
+function normalizeWord(word: string): string {
+  return word.toLowerCase().replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "");
+}
+
 function getLineRangeFromSelection(
   selection: Selection
 ): { start: number; end: number } | null {
@@ -45,7 +62,41 @@ export default function Reader({
 }: ReaderProps) {
   const { lines } = book1;
   const [trigger, setTrigger] = useState<TriggerState | null>(null);
+  const [vocabByLine, setVocabByLine] = useState<Map<number, Map<string, VocabCard>>>(
+    new Map()
+  );
+  const [hoveredVocab, setHoveredVocab] = useState<VocabHoverState | null>(null);
   const articleRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadVocabCards() {
+      try {
+        const res = await fetch("/api/vocab?chapterId=book1");
+        if (!res.ok) return;
+        const cards = (await res.json()) as VocabCard[];
+        if (cancelled) return;
+
+        const next = new Map<number, Map<string, VocabCard>>();
+        for (const card of cards) {
+          if (!next.has(card.lineNumber)) {
+            next.set(card.lineNumber, new Map());
+          }
+          next.get(card.lineNumber)!.set(normalizeWord(card.word), card);
+        }
+        setVocabByLine(next);
+      } catch {
+        // Keep reader usable even if vocab loading fails.
+      }
+    }
+
+    loadVocabCards();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const handleSelectionEnd = useCallback(() => {
     const selection = window.getSelection();
@@ -176,7 +227,35 @@ export default function Reader({
                   transition: "color 0.3s ease",
                 }}
               >
-                {line.text}
+                {(line.text.match(/(\s+|[^\s]+)/g) ?? [line.text]).map(
+                  (token, index) => {
+                    if (/^\s+$/.test(token)) return token;
+                    const vocab = vocabByLine
+                      .get(line.number)
+                      ?.get(normalizeWord(token));
+                    if (!vocab) return token;
+
+                    return (
+                      <span
+                        key={`${line.number}-${index}`}
+                        className="vocab-hover-word"
+                        onMouseEnter={(event) => {
+                          const rect = (
+                            event.currentTarget as HTMLSpanElement
+                          ).getBoundingClientRect();
+                          setHoveredVocab({
+                            card: vocab,
+                            viewportX: rect.left + rect.width / 2,
+                            viewportY: rect.top,
+                          });
+                        }}
+                        onMouseLeave={() => setHoveredVocab(null)}
+                      >
+                        {token}
+                      </span>
+                    );
+                  }
+                )}
               </span>
             </div>
           );
@@ -219,6 +298,27 @@ export default function Reader({
         >
           ✦ Enrich
         </button>
+      )}
+
+      {hoveredVocab && (
+        <div
+          className="vocab-hover-tooltip"
+          style={{
+            left: hoveredVocab.viewportX,
+            top: Math.max(12, hoveredVocab.viewportY - 8),
+          }}
+          role="tooltip"
+        >
+          <p className="vocab-hover-tooltip-word">{hoveredVocab.card.word}</p>
+          <p className="vocab-hover-tooltip-definition">
+            {hoveredVocab.card.definition}
+          </p>
+          {hoveredVocab.card.etymology && (
+            <p className="vocab-hover-tooltip-etymology">
+              {hoveredVocab.card.etymology}
+            </p>
+          )}
+        </div>
       )}
     </>
   );
