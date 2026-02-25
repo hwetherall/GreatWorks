@@ -43,10 +43,10 @@ export async function POST(request: NextRequest) {
           "X-Title": "Great Books",
         },
         body: JSON.stringify({
-          model: "anthropic/claude-3.5-sonnet",
+          model: "anthropic/claude-sonnet-4.6",
           messages,
           stream: true,
-          max_tokens: 400,
+          max_tokens: 10000,
           temperature: 0.75,
         }),
       }

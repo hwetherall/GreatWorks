@@ -77,7 +77,7 @@ Reference a specific piece of Johnathan's content that genuinely landed. Let the
 
 *Use this section to track what was built each Claude Code session*
 
-- [ ] Session 1 - Project setup, Vercel + Supabase init, text loaded, basic reading view
-- [ ] Session 2 - Inline annotation feature
+- [x] Session 1 - Project setup, Vercel + Supabase init, text loaded, basic reading view
+- [x] Session 2 - Inline annotation feature (ReadingContainer, AnnotationCard, /api/annotate streaming, prompt quality pass)
 - [ ] Session 3 - Section primer + chat interface
 - [ ] Session 4 - Prompt engineering pass, UI polish, deploy
