@@ -123,6 +123,12 @@ export interface Database {
           }
         ];
       };
+      section_card_cache: {
+        Row: { id: string; cache_key: string; content: string; created_at: string | null; };
+        Insert: { id?: string; cache_key: string; content: string; created_at?: string | null; };
+        Update: { id?: string; cache_key?: string; content?: string; created_at?: string | null; };
+        Relationships: [];
+      };
       reading_streaks: {
         Row: { id: string; session_id: string; date: string; sections_completed: number | null; annotations_made: number | null; };
         Insert: { id?: string; session_id: string; date?: string; sections_completed?: number | null; annotations_made?: number | null; };

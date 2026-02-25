@@ -112,7 +112,7 @@ export default function Primer({ level }: PrimerProps) {
         style={{
           fontFamily:
             "var(--font-cormorant), Georgia, 'Times New Roman', serif",
-          fontSize: "10px",
+          fontSize: "24px",
           letterSpacing: "0.22em",
           textTransform: "uppercase",
           color: "#4a4540",

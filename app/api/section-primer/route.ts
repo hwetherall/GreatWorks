@@ -1,6 +1,8 @@
 import { NextRequest } from "next/server";
 import { KnowledgeLevel, KNOWLEDGE_LEVELS, KNOWLEDGE_LEVEL_LABELS } from "@/lib/prompts";
 import { BOOK_1_SECTIONS } from "@/lib/sections";
+import { createSupabaseServerClient } from "@/lib/supabase";
+import { cachedContentStream, withCaching } from "@/lib/card-cache";
 
 export async function POST(request: NextRequest) {
   const apiKey = process.env.OPENROUTER_API_KEY;
@@ -37,6 +39,27 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: "Section not found" }, { status: 400 });
   }
 
+  const cacheKey = `section:${sectionId}:${cardType}:${level}`;
+  const supabase = createSupabaseServerClient();
+
+  // Check cache first
+  const { data: cached } = await supabase
+    .from("section_card_cache")
+    .select("content")
+    .eq("cache_key", cacheKey)
+    .maybeSingle();
+
+  if (cached?.content) {
+    return new Response(cachedContentStream(cached.content), {
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "X-Content-Type-Options": "nosniff",
+      },
+    });
+  }
+
+  // Cache miss — generate and cache while streaming
   const rawPrompt = cardType === "before" ? section.beforePrompt : section.afterPrompt;
   const resolvedPrompt = rawPrompt.replace("[LEVEL]", KNOWLEDGE_LEVEL_LABELS[level]);
 
@@ -74,7 +97,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  return new Response(upstream.body, {
+  return new Response(withCaching(upstream.body!, cacheKey, supabase), {
     headers: {
       "Content-Type": "text/event-stream",
       "Cache-Control": "no-cache",

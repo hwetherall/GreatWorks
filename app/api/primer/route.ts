@@ -1,5 +1,7 @@
 import { NextRequest } from "next/server";
 import { getPrimerPrompt, KnowledgeLevel, KNOWLEDGE_LEVELS } from "@/lib/prompts";
+import { createSupabaseServerClient } from "@/lib/supabase";
+import { cachedContentStream, withCaching } from "@/lib/card-cache";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -21,6 +23,27 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  const cacheKey = `primer:${level}`;
+  const supabase = createSupabaseServerClient();
+
+  // Check cache
+  const { data: cached } = await supabase
+    .from("section_card_cache")
+    .select("content")
+    .eq("cache_key", cacheKey)
+    .maybeSingle();
+
+  if (cached?.content) {
+    return new Response(cachedContentStream(cached.content), {
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "X-Content-Type-Options": "nosniff",
+      },
+    });
+  }
+
+  // Cache miss — generate and cache while streaming
   const prompt = getPrimerPrompt(level);
 
   let upstream: Response;
@@ -57,7 +80,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  return new Response(upstream.body, {
+  return new Response(withCaching(upstream.body!, cacheKey, supabase), {
     headers: {
       "Content-Type": "text/event-stream",
       "Cache-Control": "no-cache",
