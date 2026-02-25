@@ -11,6 +11,11 @@
 - [x] Section primer — "Before You Begin" foreword (streaming)
 - [x] Chat interface — persistent panel with streaming responses
 - [x] Session 4 backend integration: Supabase schema + ingestion + vocab cards + annotation history
+- [x] Section structure: 6 named sections, before/after SectionCards, IntersectionObserver lazy loading
+- [x] ProgressBar (2px fixed top), AnnotationHistory drawer, gamification (streaks, achievements, toasts)
+- [x] Pagination: Reader shows one section at a time, Prev/Next + dot indicators
+- [x] onSectionVisible fires immediately on section change (not scroll-dependent)
+- [x] Section card max_tokens increased to 1200 (prevent mid-sentence truncation)
 - [ ] Deploy to Vercel
 
 ## Session Log
@@ -19,10 +24,12 @@
 - [x] Session 2 — Full inline annotation: ReadingContainer (shared state), Reader (selection + trigger button), AnnotationCard (streaming, Esc to close, mobile slide-up), /api/annotate (OpenRouter SSE stream), prompt quality pass
 - [x] Session 3 — Section primer + chat interface: /api/primer (streaming), Primer.tsx (foreword above text), /api/chat (streaming), Chat.tsx (persistent sidebar on desktop, slide-up drawer on mobile)
 - [x] Session 4 — Supabase schema + clients, Paradise Lost seed script, Gutenberg ingestion utility, offline Groq vocab generation, /api/vocab + Reader hover tooltips, annotation history persistence + /api/annotations
+- [x] Session 5 — Section structure (6 sections), SectionCard before/after, IntersectionObserver lazy loading, section_progress tracking
+- [x] Session 6 — ProgressBar, AnnotationHistory drawer, AchievementToast, gamification schema
+- [x] Session 7 — Pagination in Reader (one section per page, Prev/Next + dots), onSectionVisible fires immediately, max_tokens raised to 1200 for section cards and primer
 
 ## Next
 
-- Deploy to Vercel (add OPENROUTER_API_KEY env var)
+- Deploy to Vercel (add all env vars: OPENROUTER_API_KEY, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, NEXT_PUBLIC_SITE_URL)
 - Run migration push after linking Supabase CLI (`supabase link` then `supabase db push`)
 - Run one-time data scripts: `npm run seed`, `npm run vocab` (and optional `npm run ingest -- 26`)
-- Optional: share/permalink for annotated passages

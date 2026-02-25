@@ -1,147 +1,221 @@
-# CLAUDE.md — Great Books AI Reading Companion
+# Great Books AI Reading Companion — Claude Code Instructions
 
-This file is context for Claude Code. Read it at the start of every session.
+Read this file at the start of every session, every loop. Then read `TODO.md` for current task status.
+Do not skip this step. The project conventions here override any default instincts you have about how to build things.
 
 ---
 
-## What we're building
+## What This Project Is
 
-An AI-powered reading companion for the Great Books, starting with **Paradise Lost Book 1 (1674)**. Think Rap Genius meets a brilliant literary scholar - users can click any phrase or passage and get contextual enrichment that restores what a 1667 reader would have already known. There's also a section primer before reading begins, and a persistent chat interface.
+A literary enrichment app for reading Paradise Lost. The product thesis is called **contextual collapse**: modern readers lack the historical, theological, and classical knowledge that Milton's 1667 audience already possessed. The app restores that context — inline, on demand, calibrated to the reader's level.
 
-The target user is an intellectually curious modern reader who wants to read the canon seriously but lacks the background knowledge that the original audience took for granted. We are NOT building a summary tool or a study guide. We are restoring depth, not replacing effort.
+This is not a summary tool. It is not a quiz. It does not spoil. It enriches.
 
-**This is a demo to send to Johnathan Bi (GreatBooks.io / 1.3M subscriber podcast).** Quality matters. It needs to be impressive.
+The target user is someone who wants to read seriously but doesn't have a classics education. The tone is a brilliant, well-read friend sitting next to them — not a textbook, not Wikipedia.
+
+The product is being built as a demo to send to **Johnathan Bi**, founder of GreatBooks.io. The demo link is the goal. Everything should serve that goal.
 
 ---
 
 ## Stack
 
-- **Framework:** Next.js (App Router)
-- **Deployment:** Vercel
-- **Database:** Supabase
-- **AI:** OpenRouter (Claude via API)
-- **Styling:** Tailwind CSS
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js (App Router) |
+| Styling | Tailwind v4 |
+| Language | TypeScript — strict, no `any` |
+| AI | OpenRouter → `anthropic/claude-sonnet-4.6` |
+| Database | Supabase (Postgres) |
+| Deployment | Vercel |
+
+Environment variables assumed to exist in `.env.local`:
+- `OPENROUTER_API_KEY`
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `NEXT_PUBLIC_SITE_URL`
+
+If you encounter a missing env var, assume it exists and proceed. Do not add fallback mock logic.
 
 ---
 
-## Key Features
-
-### 1. Knowledge Level Toggle (IMPORTANT)
-Users set their knowledge level before or during reading. This controls the tone, depth, and assumed knowledge of ALL AI outputs.
-
-- **Complete Noob** — No prior knowledge assumed. Explain everything from scratch. Warm, welcoming tone. Who is Milton? What is an epic poem? What's going on in 17th century England?
-- **Casual Reader** — Some general education assumed, but no specialist knowledge. Brief context, focus on what's surprising or non-obvious.
-- **Literature Enthusiast** — Has read other canonical English literature (Chaucer, Coleridge, Shakespeare). Can reference other works and traditions without over-explaining.
-- **Experienced Scholar** — Deep familiarity with the canon. Go further: contested interpretations, Milton's sources, theological debates, influence on later writers.
-
-This toggle must be prominent and easy to change at any time. It should persist in localStorage.
-
-### 2. Clean Reading View
-- Paradise Lost Book 1 displayed beautifully
-- Distraction-free, literary typography
-- Lines numbered (Milton is traditionally read with line numbers)
-- Passages should be selectable/clickable for annotations
-
-### 3. Inline Annotation on Click
-- User clicks/selects any word, phrase, or line
-- AI generates a contextual enrichment card calibrated to their knowledge level
-- Answers: "what would a 1667 reader have understood here that I don't?"
-- Tone should be intellectually serious but conversational — like a brilliant friend, not a textbook
-
-### 4. Section Primer
-- Displayed before the text begins
-- Spoiler-free briefing: historical moment, Milton's biography, classical/theological background
-- Calibrated to knowledge level
-- ~300 words, punchy and alive
-
-### 5. Chat Interface
-- Persistent panel (sidebar or bottom drawer)
-- Context-aware: knows what book, knows knowledge level
-- For exploring ideas, asking questions, discussing interpretations
-- Should not summarise or spoil
-
----
-
-## Design Direction
-
-**Aesthetic:** Editorial / refined. Think a beautiful literary magazine, not a SaaS dashboard. Dark mode preferred (reading at night). Rich, warm tones — deep navy or near-black backgrounds, cream or warm white text, gold or amber accents. NOT purple gradients. NOT generic tech UI.
-
-**Typography:** This is a literary product. Typography is everything.
-- Display font: something with genuine character — a serif with presence (e.g. Playfair Display, Cormorant Garamond, or similar)
-- Body font: highly readable for long-form reading (e.g. Lora, Source Serif, or similar)
-- Line height generous, measure (line length) constrained to ~65-75 characters for comfortable reading
-
-**Interactions:** Subtle and purposeful. Annotation cards should appear with a gentle fade. No flashy animations that distract from the text.
-
-**Never:** Generic Inter/Roboto fonts, light grey on white, purple gradient hero sections, dashboard-style layouts.
-
----
-
-## Prompt Engineering Principles
-
-The quality of AI outputs IS the product. Every AI call should:
-- Know the knowledge level and calibrate accordingly
-- Sound like an intelligent person, not an encyclopedia
-- Be specific to the actual passage — no generic responses
-- For annotations: lead with the most surprising or non-obvious insight
-- For chat: engage with the reader's actual question, don't deflect into summary
-
-System prompt base:
-> You are a brilliant literary companion helping a reader engage deeply with Paradise Lost by John Milton (1674). Your role is not to summarise or spoil — it is to enrich. You restore context that Milton's original 1667 audience already possessed: historical, theological, classical, and biographical. The reader's knowledge level is: [LEVEL]. Calibrate everything to this level.
-
----
-
-## Project Structure (target)
+## Directory Structure
 
 ```
 /app
-  /page.tsx              — Main reading view
+  page.tsx                    — Main reading view (ReadingContainer)
   /api
-    /annotate/route.ts   — Inline annotation endpoint
-    /chat/route.ts        — Chat endpoint
-    /primer/route.ts      — Section primer endpoint
+    /annotate/route.ts        — Inline passage enrichment (streaming SSE)
+    /chat/route.ts            — Chat panel messages (streaming SSE)
+    /primer/route.ts          — Book-level foreword (streaming SSE, cached)
+    /section-primer/route.ts  — Section before/after cards (streaming SSE, cached)
+    /vocab/route.ts           — Vocab card data for hover tooltips
+    /annotations/route.ts     — Annotation history persistence
+    /section-progress/route.ts — Section completion tracking
+
 /components
-  /Reader.tsx            — Main reading component
-  /AnnotationCard.tsx    — Popover/card for inline annotations
-  /Primer.tsx            — Section primer display
-  /Chat.tsx              — Chat panel
-  /KnowledgeToggle.tsx   — Knowledge level selector
+  Reader.tsx                  — Poem rendering, selection, line highlighting, pagination
+  SectionCard.tsx             — Before/after cards per section (lazy loaded via IntersectionObserver)
+  AnnotationCard.tsx          — Floating enrichment card (streaming, Esc to close)
+  AnnotationHistory.tsx       — Bottom-left journal drawer of past enrichments
+  Chat.tsx                    — Persistent right-panel chat (streaming)
+  AchievementToast.tsx        — Slide-in achievement notifications
+
 /lib
-  /paradise-lost.ts      — Book 1 text, structured by line
-  /prompts.ts            — All AI system prompts
-/data
-  /book1.json            — Paradise Lost Book 1, structured
+  paradise-lost.ts            — Book 1 text, 798 lines, structured
+  sections.ts                 — BOOK_1_SECTIONS array: id, title, lineStart, lineEnd, beforePrompt, afterPrompt
+  prompts.ts                  — All AI system prompts (KnowledgeLevel type, getPrimerPrompt, getChatSystemPrompt)
+  supabase.ts                 — Supabase client factory (server + browser)
+  card-cache.ts               — cachedContentStream + withCaching helpers for SSE caching
+
+/supabase
+  /migrations                 — SQL migration files (do not edit manually, use migration files)
 ```
 
 ---
 
-## TODO Status
+## Architecture Patterns
 
-See TODO.md for full feature list and session log.
+### Streaming (SSE)
 
-### Current Priority (Session 1)
-1. Project init: Next.js + Tailwind + Supabase + OpenRouter
-2. Load Paradise Lost Book 1 text, structured and clean
-3. Basic reading view with correct typography
-4. Knowledge level toggle (UI + localStorage persistence)
-5. Deploy skeleton to Vercel
+Every AI call streams. This is non-negotiable. The pattern is identical across all routes:
+
+1. Check cache in Supabase (`section_card_cache` table, keyed by a stable string)
+2. Cache hit → return `cachedContentStream(content)` as SSE
+3. Cache miss → call OpenRouter with `stream: true`, pipe through `withCaching(body, key, supabase)`
+4. Always return `Content-Type: text/event-stream`
+
+Study `/api/annotate/route.ts` before touching any AI route. Mirror it exactly. Do not invent a new streaming pattern.
+
+### AI Model
+
+Always use: `anthropic/claude-sonnet-4.6`
+Temperature: `0.75`
+Max tokens: `800` for cards/primers, `10000` for chat
+
+### Knowledge Levels
+
+Three levels defined in `lib/prompts.ts`:
+- `noob` — Complete beginner, no classical or theological background
+- `casual` — Some cultural literacy, needs context not explanation
+- `scholar` — Advanced reader, wants depth and scholarly interpretation
+
+The `[LEVEL]` placeholder in `beforePrompt` and `afterPrompt` strings in `sections.ts` is resolved at runtime by replacing it with the full label from `KNOWLEDGE_LEVEL_LABELS`.
+
+### Section Cards
+
+`BOOK_1_SECTIONS` in `lib/sections.ts` defines 6 sections for Book 1. Each has:
+- `beforePrompt`: shown before the reader sees the text (no spoilers — sets up context)
+- `afterPrompt`: shown after the text (reflection, insight, literary analysis)
+
+The `afterPrompt` always prepends: *"Your response must open with one plain sentence stating the narrative fact: what just happened, where we are in the poem."* This is injected in `route.ts`, not baked into the prompt strings.
+
+Cards are loaded lazily via `IntersectionObserver` — they do not fetch until they scroll into view.
+
+### Caching Strategy
+
+Section cards and primers are cached in the `section_card_cache` Supabase table.
+Cache key format: `section:{sectionId}:{cardType}:{level}` (e.g. `section:b1s1:before:noob`)
+Do not cache chat or annotation responses — those are contextual.
+
+### Session & Progress
+
+Reading progress is tracked via a `gb_session` cookie (anonymous). Do not require auth for any MVP feature. The `section_progress` table records which sections are complete per session. Achievements are stored in `achievements`, `reading_streaks`, and `session_achievements` tables.
 
 ---
 
-## Source Text
+## Design System
 
-Paradise Lost Book 1 (1674 version):
-https://www.poetryfoundation.org/poems/45718/paradise-lost-book-1-1674-version
+This is a literary product. Treat every UI decision as a typography and editorial decision, not a software UI decision.
 
-The text should be stored locally in the repo (not fetched at runtime) as structured JSON with line numbers.
+### Palette
+```
+Background:      #0d0d0e  (near-black)
+Text primary:    #f0ebe2  (warm cream)
+Text secondary:  #8a847a  (muted warm grey)
+Text tertiary:   #4a4540  (very muted, line numbers, dividers)
+Gold accent:     #c9a84c  (enrichment actions, current state, CTAs)
+Surface:         #1c1b18  (cards, panels, slightly lifted from bg)
+Border subtle:   #2a2820  (dividers, inactive borders)
+```
+
+### Typography
+- **Serif body** (poem text, prose): `var(--font-lora), Georgia, 'Times New Roman', serif`
+- **Display serif** (headings, cards): `var(--font-cormorant), Georgia, 'Times New Roman', serif`
+- **No sans-serif.** No Inter. No system-ui. If it looks like a SaaS product, it's wrong.
+
+### Component Rules
+- No generic card borders with visible backgrounds unless content is clearly floating (e.g. AnnotationCard)
+- No purple. No blue. No gradients of any kind.
+- Buttons: sparse, serif, gold for primary action, muted grey for secondary
+- Hover states: subtle — border-color shift, slight background lift. No transforms, no shadows on text.
+- Loading states: pulsing opacity, not spinners
+
+### Spacing
+The reading column sits inside a constrained max-width (~680px content + 460px chat panel). Line height for poem text is `1.85`. Do not compress this.
 
 ---
 
-## What success looks like
+## What Has Been Built (Session Log)
 
-A deployed Vercel URL where:
-- Someone can read Book 1 of Paradise Lost beautifully
-- Click "Pandæmonium" and get a genuinely interesting explanation calibrated to their level
-- Read a primer that makes them excited to start
-- Chat about what they're reading
-- Feel like this was made by someone who loves the Great Books, not someone who just knows how to code
+- **Session 1** — Next.js init, text loading (798 lines), basic reading view, knowledge toggle
+- **Session 2** — Inline annotation: selection → ✦ Enrich button → streaming AnnotationCard
+- **Session 3** — Section primer (foreword above text), Chat panel (desktop sidebar, mobile drawer)
+- **Session 4** — Supabase schema, seed script, vocab cards (hover tooltips), annotation history persistence
+- **Session 5** — Section structure (6 named sections), before/after SectionCards, IntersectionObserver lazy loading, section_progress tracking
+- **Session 6** — ProgressBar (2px fixed top), AnnotationHistory drawer, gamification (streaks, achievements, toasts)
+
+**Recent additions (not yet in session log):**
+- "Ask in Chat" button on text selection (pre-fills chat textarea with quoted passage)
+- Smart scroll lock in chat (only auto-scrolls if within 60px of bottom)
+- After cards now open with a narrative grounding sentence before insight
+- Chat panel width: 460px
+- Pagination: Reader now shows one section at a time with Prev/Next navigation and dot indicators
+
+---
+
+## Current Known Issues / Backlog
+
+- Section card content sometimes truncates mid-sentence (primer and after card cut off) — likely a max_tokens issue or stream termination; investigate `withCaching` and token limits
+- Vocab words are sometimes miscalibrated: marks common words ("visible", "invoke"), misses archaic ones ("durst")
+- `onSectionVisible` callback was built for scroll-based detection — with pagination now in place, it should fire immediately when a section becomes active, not on scroll
+- Chat closing question ("What drew you to that angle?") — LLMs tend to append questions; the system prompt should be more explicit about when this is appropriate vs. annoying
+
+---
+
+## Constraints — Non-Negotiable
+
+**Never summarise or spoil.** The before cards prepare, the after cards reflect. Neither reveals what happens next.
+
+**Never touch working features without cause.** If annotation is working, do not refactor it. If chat streams correctly, do not rewrite it. Scope your changes to what is asked.
+
+**All AI prompts live in `lib/prompts.ts` or `lib/sections.ts`.** Do not hardcode prompt strings in route files. Do not modify existing prompts without explicit instruction.
+
+**TypeScript must stay clean.** Run `npx tsc --noEmit` before considering any session complete. Fix all errors. No `@ts-ignore`.
+
+**`npm run build` must pass.** Do not leave the project in a broken build state.
+
+**Streaming is the pattern.** Do not introduce `await`-based full-response AI calls. The reader should see text appearing, not wait for it.
+
+---
+
+## How to Start Each Session
+
+1. Read this file (`CLAUDE.md`)
+2. Read `TODO.md` — identify what is checked and what is not
+3. Check the current state of the file(s) you're about to touch — do not assume, read
+4. Make targeted changes only. Do not reorganise working files.
+5. After completing work: run `npx tsc --noEmit`, then `npm run build`
+6. Update `TODO.md` session log
+
+---
+
+## Definition of Demo-Ready
+
+- [ ] Deployed to Vercel with a public URL
+- [ ] Pagination working (one section per page, Prev/Next navigation)
+- [ ] Before/after cards loading and not truncating
+- [ ] Chat functional with streaming, no forced closing questions
+- [ ] Vocab tooltips calibrated (archaic words flagged, common words excluded)
+- [ ] `npm run build` passes clean
+- [ ] Looks good enough to screenshot — no unfinished UI visible to the reader
