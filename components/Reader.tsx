@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { book1 } from "@/lib/paradise-lost";
 import type { KnowledgeLevel } from "@/lib/prompts";
+import { BOOK_1_SECTIONS } from "@/lib/sections";
+import SectionCard from "./SectionCard";
 
 interface ReaderProps {
   level: KnowledgeLevel;
@@ -12,6 +14,8 @@ interface ReaderProps {
     lineRange: string,
     lines: { start: number; end: number }
   ) => void;
+  completedSections: Set<string>;
+  onSectionComplete: (sectionId: string) => void;
 }
 
 interface TriggerState {
@@ -57,8 +61,11 @@ function getLineRangeFromSelection(
 }
 
 export default function Reader({
+  level,
   activeLines,
   onAnnotateRequest,
+  completedSections,
+  onSectionComplete,
 }: ReaderProps) {
   const { lines } = book1;
   const [trigger, setTrigger] = useState<TriggerState | null>(null);
@@ -171,93 +178,114 @@ export default function Reader({
           fontFamily: "var(--font-lora), Georgia, 'Times New Roman', serif",
         }}
       >
-        {lines.map((line) => {
-          const showNumber = line.number % 5 === 0 || line.number === 1;
-          const isActive =
-            activeLines !== null &&
-            line.number >= activeLines.start &&
-            line.number <= activeLines.end;
-
+        {BOOK_1_SECTIONS.map((section) => {
+          const sectionLines = lines.filter(
+            (l) => l.number >= section.lineStart && l.number <= section.lineEnd
+          );
           return (
-            <div
-              key={line.number}
-              style={{
-                display: "flex",
-                alignItems: "baseline",
-                lineHeight: "1.85",
-                minHeight: "1.85em",
-                marginLeft: "-6px",
-                paddingLeft: "6px",
-                paddingRight: "6px",
-                borderRadius: "3px",
-                background: isActive
-                  ? "rgba(201, 168, 76, 0.07)"
-                  : "transparent",
-                transition: "background 0.3s ease",
-              }}
-            >
-              {/* Line number */}
-              <span
-                style={{
-                  display: "inline-block",
-                  width: "48px",
-                  minWidth: "48px",
-                  textAlign: "right",
-                  paddingRight: "20px",
-                  fontFamily:
-                    "var(--font-cormorant), Georgia, 'Times New Roman', serif",
-                  fontSize: "12px",
-                  color: showNumber ? "#4a4540" : "transparent",
-                  userSelect: "none",
-                  flexShrink: 0,
-                  transition: "color 0.3s ease",
-                }}
-              >
-                {line.number}
-              </span>
+            <React.Fragment key={section.id}>
+              <SectionCard
+                cardType="before"
+                section={section}
+                level={level}
+              />
+              {sectionLines.map((line) => {
+                const showNumber = line.number % 5 === 0 || line.number === 1;
+                const isActive =
+                  activeLines !== null &&
+                  line.number >= activeLines.start &&
+                  line.number <= activeLines.end;
 
-              {/* Poem text */}
-              <span
-                data-line={line.number}
-                style={{
-                  fontSize: "18px",
-                  color: isActive ? "#f8f4ec" : "#f0ebe2",
-                  letterSpacing: "0.01em",
-                  cursor: "text",
-                  transition: "color 0.3s ease",
-                }}
-              >
-                {(line.text.match(/(\s+|[^\s]+)/g) ?? [line.text]).map(
-                  (token, index) => {
-                    if (/^\s+$/.test(token)) return token;
-                    const vocab = vocabByLine
-                      .get(line.number)
-                      ?.get(normalizeWord(token));
-                    if (!vocab) return token;
+                return (
+                  <div
+                    key={line.number}
+                    style={{
+                      display: "flex",
+                      alignItems: "baseline",
+                      lineHeight: "1.85",
+                      minHeight: "1.85em",
+                      marginLeft: "-6px",
+                      paddingLeft: "6px",
+                      paddingRight: "6px",
+                      borderRadius: "3px",
+                      background: isActive
+                        ? "rgba(201, 168, 76, 0.07)"
+                        : "transparent",
+                      transition: "background 0.3s ease",
+                    }}
+                  >
+                    {/* Line number */}
+                    <span
+                      style={{
+                        display: "inline-block",
+                        width: "48px",
+                        minWidth: "48px",
+                        textAlign: "right",
+                        paddingRight: "20px",
+                        fontFamily:
+                          "var(--font-cormorant), Georgia, 'Times New Roman', serif",
+                        fontSize: "12px",
+                        color: showNumber ? "#4a4540" : "transparent",
+                        userSelect: "none",
+                        flexShrink: 0,
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      {line.number}
+                    </span>
 
-                    return (
-                      <span
-                        key={`${line.number}-${index}`}
-                        className="vocab-hover-word"
-                        onMouseEnter={(event) => {
-                          const rect = (
-                            event.currentTarget as HTMLSpanElement
-                          ).getBoundingClientRect();
-                          setHoveredVocab({
-                            card: vocab,
-                            viewportX: rect.left + rect.width / 2,
-                            viewportY: rect.top,
-                          });
-                        }}
-                        onMouseLeave={() => setHoveredVocab(null)}
-                      >
-                        {token}
-                      </span>
-                    );
-                  }
-                )}
-              </span>
-            </div>
+                    {/* Poem text */}
+                    <span
+                      data-line={line.number}
+                      style={{
+                        fontSize: "18px",
+                        color: isActive ? "#f8f4ec" : "#f0ebe2",
+                        letterSpacing: "0.01em",
+                        cursor: "text",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      {(line.text.match(/(\s+|[^\s]+)/g) ?? [line.text]).map(
+                        (token, index) => {
+                          if (/^\s+$/.test(token)) return token;
+                          const vocab = vocabByLine
+                            .get(line.number)
+                            ?.get(normalizeWord(token));
+                          if (!vocab) return token;
+
+                          return (
+                            <span
+                              key={`${line.number}-${index}`}
+                              className="vocab-hover-word"
+                              onMouseEnter={(event) => {
+                                const rect = (
+                                  event.currentTarget as HTMLSpanElement
+                                ).getBoundingClientRect();
+                                setHoveredVocab({
+                                  card: vocab,
+                                  viewportX: rect.left + rect.width / 2,
+                                  viewportY: rect.top,
+                                });
+                              }}
+                              onMouseLeave={() => setHoveredVocab(null)}
+                            >
+                              {token}
+                            </span>
+                          );
+                        }
+                      )}
+                    </span>
+                  </div>
+                );
+              })}
+              <SectionCard
+                cardType="after"
+                section={section}
+                level={level}
+                isCompleted={completedSections.has(section.id)}
+                onComplete={() => onSectionComplete(section.id)}
+              />
+            </React.Fragment>
           );
         })}
       </article>

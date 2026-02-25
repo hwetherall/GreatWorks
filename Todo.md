@@ -81,3 +81,4 @@ Reference a specific piece of Johnathan's content that genuinely landed. Let the
 - [x] Session 2 - Inline annotation feature (ReadingContainer, AnnotationCard, /api/annotate streaming, prompt quality pass)
 - [x] Session 3 - Section primer + chat interface (/api/primer streaming GET, /api/chat streaming POST, Primer.tsx foreword, Chat.tsx desktop sidebar + mobile drawer)
 - [ ] Session 4 - Prompt engineering pass, UI polish, deploy
+- [x] Session 5 - Section structure: 6 named sections (b1s1–b1s6), before/after SectionCards with lazy IntersectionObserver loading, section_progress Supabase table + API routes, progress persisted via gb_session cookie

@@ -7,7 +7,7 @@ type GroqCard = {
   etymology?: string;
 };
 
-const MODEL_CANDIDATES = ["openai/gpt-4o-mini", "llama-3.3-70b-versatile"];
+const MODEL = "openai/gpt-oss-120b";
 const LINE_ID_QUERY_CHUNK_SIZE = 150;
 
 function sleep(ms: number): Promise<void> {
@@ -58,37 +58,31 @@ async function callGroq(lineText: string, apiKey: string): Promise<GroqCard[]> {
     `Line: ${lineText}`,
   ].join("\n");
 
-  for (const model of MODEL_CANDIDATES) {
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model,
-        temperature: 0.2,
-        max_tokens: 300,
-        messages: [{ role: "user", content: prompt }],
-      }),
-    });
+  const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      temperature: 0.2,
+      max_completion_tokens: 300,
+      reasoning_effort: "medium",
+      messages: [{ role: "user", content: prompt }],
+    }),
+  });
 
-    if (!response.ok) {
-      if (response.status >= 500 || response.status === 429 || response.status === 404) {
-        continue;
-      }
-      const text = await response.text();
-      throw new Error(`Groq request failed (${response.status}): ${text}`);
-    }
-
-    const data = (await response.json()) as {
-      choices?: Array<{ message?: { content?: string } }>;
-    };
-    const content = data.choices?.[0]?.message?.content ?? "[]";
-    return parseCards(content);
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Groq request failed (${response.status}): ${text}`);
   }
 
-  throw new Error("No Groq model candidate succeeded.");
+  const data = (await response.json()) as {
+    choices?: Array<{ message?: { content?: string } }>;
+  };
+  const content = data.choices?.[0]?.message?.content ?? "[]";
+  return parseCards(content);
 }
 
 async function loadProcessedLineIds(

@@ -123,6 +123,12 @@ export interface Database {
           }
         ];
       };
+      section_progress: {
+        Row: { id: string; session_id: string; section_id: string; completed_at: string | null; };
+        Insert: { id?: string; session_id: string; section_id: string; completed_at?: string | null; };
+        Update: { id?: string; session_id?: string; section_id?: string; completed_at?: string | null; };
+        Relationships: [];
+      };
       annotation_history: {
         Row: {
           id: string;

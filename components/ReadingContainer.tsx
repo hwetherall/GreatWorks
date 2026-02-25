@@ -20,6 +20,7 @@ interface AnnotationState {
 export default function ReadingContainer() {
   const [level, setLevel] = useState<KnowledgeLevel>(DEFAULT_LEVEL);
   const [annotation, setAnnotation] = useState<AnnotationState | null>(null);
+  const [completedSections, setCompletedSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as KnowledgeLevel | null;
@@ -27,6 +28,19 @@ export default function ReadingContainer() {
       setLevel(stored);
     }
   }, []);
+
+  useEffect(() => {
+    fetch("/api/section-progress")
+      .then((r) => (r.ok ? r.json() : []))
+      .then((rows: Array<{ section_id: string }>) => {
+        setCompletedSections(new Set(rows.map((r) => r.section_id)));
+      })
+      .catch(() => {});
+  }, []);
+
+  function handleSectionComplete(sectionId: string) {
+    setCompletedSections((prev) => new Set([...prev, sectionId]));
+  }
 
   function handleLevelChange(newLevel: KnowledgeLevel) {
     setLevel(newLevel);
@@ -56,6 +70,8 @@ export default function ReadingContainer() {
         level={level}
         activeLines={annotation?.lines ?? null}
         onAnnotateRequest={handleAnnotateRequest}
+        completedSections={completedSections}
+        onSectionComplete={handleSectionComplete}
       />
 
       {annotation && (
