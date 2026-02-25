@@ -37,6 +37,23 @@ body {
   min-height: 100vh;
 }
 
+/* Responsive: desktop tabs, mobile select */
+.hidden-mobile {
+  display: grid;
+}
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .hidden-mobile {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
