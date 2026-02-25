@@ -208,7 +208,7 @@ export default function SectionCard({
           style={{
             fontFamily:
               "var(--font-cormorant), Georgia, 'Times New Roman', serif",
-            fontSize: "13px",
+            fontSize: "24px",
             color: "#7a7568",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
