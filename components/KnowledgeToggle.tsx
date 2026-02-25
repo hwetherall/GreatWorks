@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import {
   KnowledgeLevel,
   KNOWLEDGE_LEVELS,
@@ -8,46 +7,15 @@ import {
   KNOWLEDGE_LEVEL_DESCRIPTIONS,
 } from "@/lib/prompts";
 
-const STORAGE_KEY = "greatbooks-knowledge-level";
-const DEFAULT_LEVEL: KnowledgeLevel = "casual";
-
 interface KnowledgeToggleProps {
-  onChange?: (level: KnowledgeLevel) => void;
+  value: KnowledgeLevel;
+  onChange: (level: KnowledgeLevel) => void;
 }
 
-export default function KnowledgeToggle({ onChange }: KnowledgeToggleProps) {
-  const [level, setLevel] = useState<KnowledgeLevel>(DEFAULT_LEVEL);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY) as KnowledgeLevel | null;
-    if (stored && KNOWLEDGE_LEVELS.includes(stored)) {
-      setLevel(stored);
-    }
-    setMounted(true);
-  }, []);
-
-  function handleSelect(newLevel: KnowledgeLevel) {
-    setLevel(newLevel);
-    localStorage.setItem(STORAGE_KEY, newLevel);
-    onChange?.(newLevel);
-  }
-
-  // Avoid hydration mismatch — render a skeleton until mounted
-  if (!mounted) {
-    return (
-      <div
-        style={{
-          borderTop: "1px solid #2a2820",
-          borderBottom: "1px solid #2a2820",
-          padding: "20px 0",
-        }}
-      >
-        <div style={{ height: "80px" }} />
-      </div>
-    );
-  }
-
+export default function KnowledgeToggle({
+  value,
+  onChange,
+}: KnowledgeToggleProps) {
   return (
     <div
       style={{
@@ -65,12 +33,13 @@ export default function KnowledgeToggle({ onChange }: KnowledgeToggleProps) {
           textTransform: "uppercase",
           color: "#8a847a",
           marginBottom: "14px",
+          margin: "0 0 14px",
         }}
       >
         Your Reading Level
       </p>
 
-      {/* Desktop: horizontal tabs */}
+      {/* Desktop: horizontal grid of tabs */}
       <div
         style={{
           display: "grid",
@@ -80,11 +49,11 @@ export default function KnowledgeToggle({ onChange }: KnowledgeToggleProps) {
         className="hidden-mobile"
       >
         {KNOWLEDGE_LEVELS.map((lvl) => {
-          const active = level === lvl;
+          const active = value === lvl;
           return (
             <button
               key={lvl}
-              onClick={() => handleSelect(lvl)}
+              onClick={() => onChange(lvl)}
               style={{
                 background: active ? "#1c1b18" : "transparent",
                 border: `1px solid ${active ? "#c9a84c" : "#2a2820"}`,
@@ -140,29 +109,44 @@ export default function KnowledgeToggle({ onChange }: KnowledgeToggleProps) {
 
       {/* Mobile: select dropdown */}
       <div className="mobile-only">
-        <select
-          value={level}
-          onChange={(e) => handleSelect(e.target.value as KnowledgeLevel)}
-          style={{
-            width: "100%",
-            background: "#1c1b18",
-            border: "1px solid #c9a84c",
-            borderRadius: "4px",
-            padding: "12px 16px",
-            color: "#f0ebe2",
-            fontFamily: "var(--font-lora), Georgia, serif",
-            fontSize: "15px",
-            cursor: "pointer",
-            appearance: "none",
-            WebkitAppearance: "none",
-          }}
-        >
-          {KNOWLEDGE_LEVELS.map((lvl) => (
-            <option key={lvl} value={lvl}>
-              {KNOWLEDGE_LEVEL_LABELS[lvl]}
-            </option>
-          ))}
-        </select>
+        <div style={{ position: "relative" }}>
+          <select
+            value={value}
+            onChange={(e) => onChange(e.target.value as KnowledgeLevel)}
+            style={{
+              width: "100%",
+              background: "#1c1b18",
+              border: "1px solid #c9a84c",
+              borderRadius: "4px",
+              padding: "12px 40px 12px 16px",
+              color: "#f0ebe2",
+              fontFamily: "var(--font-lora), Georgia, serif",
+              fontSize: "15px",
+              cursor: "pointer",
+              appearance: "none",
+              WebkitAppearance: "none",
+            }}
+          >
+            {KNOWLEDGE_LEVELS.map((lvl) => (
+              <option key={lvl} value={lvl}>
+                {KNOWLEDGE_LEVEL_LABELS[lvl]}
+              </option>
+            ))}
+          </select>
+          <span
+            style={{
+              position: "absolute",
+              right: "14px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              color: "#c9a84c",
+              pointerEvents: "none",
+              fontSize: "12px",
+            }}
+          >
+            ▾
+          </span>
+        </div>
         <div
           style={{
             marginTop: "8px",
@@ -171,12 +155,9 @@ export default function KnowledgeToggle({ onChange }: KnowledgeToggleProps) {
             fontStyle: "italic",
           }}
         >
-          {KNOWLEDGE_LEVEL_DESCRIPTIONS[level]}
+          {KNOWLEDGE_LEVEL_DESCRIPTIONS[value]}
         </div>
       </div>
     </div>
   );
 }
-
-export { DEFAULT_LEVEL };
-export type { KnowledgeToggleProps };

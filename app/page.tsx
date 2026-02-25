@@ -1,5 +1,4 @@
-import Reader from "@/components/Reader";
-import KnowledgeToggle from "@/components/KnowledgeToggle";
+import ReadingContainer from "@/components/ReadingContainer";
 
 export default function Home() {
   return (
@@ -18,7 +17,7 @@ export default function Home() {
           paddingBottom: "120px",
         }}
       >
-        {/* Book header */}
+        {/* Static book header — server-rendered */}
         <header style={{ marginBottom: "48px" }}>
           <p
             style={{
@@ -28,7 +27,7 @@ export default function Home() {
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "#8a847a",
-              marginBottom: "16px",
+              margin: "0 0 16px",
             }}
           >
             John Milton · 1674
@@ -74,16 +73,13 @@ export default function Home() {
               margin: 0,
             }}
           >
-            An epic poem in twelve books. Set your reading level below — it
-            shapes the depth and tone of all contextual enrichment.
+            Select any word, phrase, or line to get contextual enrichment
+            calibrated to your reading level.
           </p>
         </header>
 
-        {/* Knowledge level selector */}
-        <KnowledgeToggle />
-
-        {/* Poem text */}
-        <Reader />
+        {/* Interactive reading experience */}
+        <ReadingContainer />
       </main>
     </div>
   );
