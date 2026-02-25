@@ -8,6 +8,40 @@ type VocabResponseItem = {
   etymology: string;
 };
 
+const LINE_ID_QUERY_CHUNK_SIZE = 150;
+
+async function loadVocabCardsByLineIds(
+  supabase: ReturnType<typeof createSupabaseServerClient>,
+  lineIds: string[]
+) {
+  const cards: Array<{
+    line_id: string | null;
+    word: string;
+    definition: string;
+    etymology: string | null;
+  }> = [];
+
+  for (let i = 0; i < lineIds.length; i += LINE_ID_QUERY_CHUNK_SIZE) {
+    const chunk = lineIds.slice(i, i + LINE_ID_QUERY_CHUNK_SIZE);
+    if (chunk.length === 0) continue;
+
+    const { data, error } = await supabase
+      .from("vocab_cards")
+      .select("line_id, word, definition, etymology")
+      .in("line_id", chunk);
+
+    if (error) {
+      throw new Error(
+        `Failed loading vocab cards for line ids ${i + 1}-${i + chunk.length}: ${error.message}`
+      );
+    }
+
+    cards.push(...(data ?? []));
+  }
+
+  return cards;
+}
+
 export async function GET(request: NextRequest) {
   const requestedChapterId = new URL(request.url).searchParams.get("chapterId");
   if (!requestedChapterId) {
@@ -63,19 +97,30 @@ export async function GET(request: NextRequest) {
   }
 
   const lineNumberById = new Map(lines.map((line) => [line.id, line.line_number]));
-  const { data: cards, error: cardsError } = await supabase
-    .from("vocab_cards")
-    .select("line_id, word, definition, etymology")
-    .in(
-      "line_id",
+  let cards: Array<{
+    line_id: string | null;
+    word: string;
+    definition: string;
+    etymology: string | null;
+  }> = [];
+  try {
+    cards = await loadVocabCardsByLineIds(
+      supabase,
       lines.map((line) => line.id)
     );
-
-  if (cardsError) {
-    return Response.json({ error: cardsError.message }, { status: 500 });
+  } catch (error) {
+    return Response.json(
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "Failed to load vocab cards",
+      },
+      { status: 500 }
+    );
   }
 
-  const result: VocabResponseItem[] = (cards ?? [])
+  const result: VocabResponseItem[] = cards
     .map((card) => ({
       lineNumber: lineNumberById.get(card.line_id ?? "") ?? -1,
       word: card.word,
