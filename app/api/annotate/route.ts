@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { getAnnotationMessages, KnowledgeLevel } from "@/lib/prompts";
 import { createSupabaseServerClient } from "@/lib/supabase";
+import { checkAndUnlockAchievements } from "@/lib/achievements";
 
 function parseLineRange(
   lineRange: string
@@ -157,6 +158,30 @@ export async function POST(request: NextRequest) {
             knowledge_level: level,
             annotation_content: completionText,
           });
+
+          // Reading streak — fire-and-forget, non-blocking
+          void (async () => {
+            try {
+              await supabase.rpc("upsert_reading_streak", {
+                p_session_id: sessionId,
+                p_annotations: 1,
+              });
+            } catch {}
+          })();
+
+          // Achievement check — emit result as final SSE event
+          try {
+            const achievements = await checkAndUnlockAchievements(sessionId);
+            if (achievements.length > 0) {
+              controller.enqueue(
+                encoder.encode(
+                  `data: ${JSON.stringify({ achievements })}\n\n`
+                )
+              );
+            }
+          } catch {
+            // Non-fatal
+          }
         }
 
         controller.close();

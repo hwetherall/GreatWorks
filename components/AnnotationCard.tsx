@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { KnowledgeLevel } from "@/lib/prompts";
+import type { Achievement } from "@/lib/types";
 
 interface AnnotationCardProps {
   passage: string;
   lineRange: string;
   level: KnowledgeLevel;
   onClose: () => void;
+  onComplete?: (achievements: Achievement[]) => void;
 }
 
 export default function AnnotationCard({
@@ -15,6 +17,7 @@ export default function AnnotationCard({
   lineRange,
   level,
   onClose,
+  onComplete,
 }: AnnotationCardProps) {
   const [text, setText] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
@@ -29,6 +32,8 @@ export default function AnnotationCard({
       setIsStreaming(true);
       setText("");
       setError(null);
+
+      const pendingAchievements: Achievement[] = [];
 
       try {
         const res = await fetch("/api/annotate", {
@@ -67,6 +72,11 @@ export default function AnnotationCard({
 
             try {
               const parsed = JSON.parse(data);
+              // Achievement event emitted by route after stream ends
+              if (Array.isArray(parsed.achievements)) {
+                pendingAchievements.push(...(parsed.achievements as Achievement[]));
+                continue;
+              }
               const delta = parsed.choices?.[0]?.delta?.content;
               if (delta && !cancelled) {
                 setText((prev) => prev + delta);
@@ -85,7 +95,10 @@ export default function AnnotationCard({
           );
         }
       } finally {
-        if (!cancelled) setIsStreaming(false);
+        if (!cancelled) {
+          setIsStreaming(false);
+          onComplete?.(pendingAchievements);
+        }
       }
     }
 

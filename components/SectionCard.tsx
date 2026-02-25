@@ -5,13 +5,15 @@ import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 import type { KnowledgeLevel } from "@/lib/prompts";
 import type { Section } from "@/lib/sections";
+import type { Achievement } from "@/lib/types";
 
 interface SectionCardProps {
   section: Section;
   level: KnowledgeLevel;
   cardType: "before" | "after";
   isCompleted?: boolean;
-  onComplete?: () => void;
+  onComplete?: (achievements: Achievement[]) => void;
+  onSectionVisible?: (sectionId: string) => void;
 }
 
 const mdComponents: Components = {
@@ -42,6 +44,7 @@ export default function SectionCard({
   cardType,
   isCompleted = false,
   onComplete,
+  onSectionVisible,
 }: SectionCardProps) {
   const [text, setText] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
@@ -58,6 +61,7 @@ export default function SectionCard({
     setHasStarted(false);
   }, [level]);
 
+  // Lazy-load trigger
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -74,6 +78,25 @@ export default function SectionCard({
     observer.observe(el);
     return () => observer.disconnect();
   }, [hasStarted]);
+
+  // Persistent visibility tracking for "current section" (before cards only)
+  useEffect(() => {
+    if (cardType !== "before" || !onSectionVisible) return;
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          onSectionVisible(section.id);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [cardType, onSectionVisible, section.id]);
 
   useEffect(() => {
     if (!hasStarted) return;
@@ -151,15 +174,20 @@ export default function SectionCard({
   async function handleMarkComplete() {
     setLocalCompleted(true);
     try {
-      await fetch("/api/section-progress", {
+      const res = await fetch("/api/section-progress", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sectionId: section.id }),
       });
+      if (res.ok) {
+        const data = await res.json();
+        onComplete?.(data.unlockedAchievements ?? []);
+      } else {
+        onComplete?.([]);
+      }
     } catch {
-      // Non-fatal — optimistic UI already updated
+      onComplete?.([]);
     }
-    onComplete?.();
   }
 
   const divider = (
@@ -180,8 +208,8 @@ export default function SectionCard({
           style={{
             fontFamily:
               "var(--font-cormorant), Georgia, 'Times New Roman', serif",
-            fontSize: "11px",
-            color: "#4a4540",
+            fontSize: "13px",
+            color: "#7a7568",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
             margin: "0 0 20px",

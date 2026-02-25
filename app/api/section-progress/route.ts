@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase";
+import { checkAndUnlockAchievements } from "@/lib/achievements";
 
 export async function GET(request: NextRequest) {
   const sessionId = request.cookies.get("gb_session")?.value;
@@ -40,14 +41,36 @@ export async function POST(request: NextRequest) {
   const existingSessionId = request.cookies.get("gb_session")?.value;
   const sessionId = existingSessionId || crypto.randomUUID();
 
+  const supabase = createSupabaseServerClient();
+
+  // Upsert section completion
   try {
-    const supabase = createSupabaseServerClient();
-    await supabase.from("section_progress").upsert(
-      { session_id: sessionId, section_id: sectionId },
-      { onConflict: "session_id,section_id" }
-    );
+    await supabase
+      .from("section_progress")
+      .upsert(
+        { session_id: sessionId, section_id: sectionId },
+        { onConflict: "session_id,section_id" }
+      );
   } catch {
     // Non-fatal — optimistic UI already updated on client
+  }
+
+  // Reading streak — fire-and-forget
+  void (async () => {
+    try {
+      await supabase.rpc("upsert_reading_streak", {
+        p_session_id: sessionId,
+        p_sections: 1,
+      });
+    } catch {}
+  })();
+
+  // Achievement check
+  let unlockedAchievements: { id: string; title: string; description: string; icon: string }[] = [];
+  try {
+    unlockedAchievements = await checkAndUnlockAchievements(sessionId);
+  } catch {
+    // Non-fatal
   }
 
   const headers = new Headers({ "Content-Type": "application/json" });
@@ -58,5 +81,8 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  return new Response(JSON.stringify({ ok: true }), { headers });
+  return new Response(
+    JSON.stringify({ ok: true, unlockedAchievements }),
+    { headers }
+  );
 }

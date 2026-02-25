@@ -4,6 +4,7 @@ import React, { useState, useRef, useCallback, useEffect } from "react";
 import { book1 } from "@/lib/paradise-lost";
 import type { KnowledgeLevel } from "@/lib/prompts";
 import { BOOK_1_SECTIONS } from "@/lib/sections";
+import type { Achievement } from "@/lib/types";
 import SectionCard from "./SectionCard";
 
 interface ReaderProps {
@@ -15,7 +16,8 @@ interface ReaderProps {
     lines: { start: number; end: number }
   ) => void;
   completedSections: Set<string>;
-  onSectionComplete: (sectionId: string) => void;
+  onSectionComplete: (sectionId: string, achievements: Achievement[]) => void;
+  onSectionVisible: (sectionId: string) => void;
 }
 
 interface TriggerState {
@@ -66,6 +68,7 @@ export default function Reader({
   onAnnotateRequest,
   completedSections,
   onSectionComplete,
+  onSectionVisible,
 }: ReaderProps) {
   const { lines } = book1;
   const [trigger, setTrigger] = useState<TriggerState | null>(null);
@@ -188,6 +191,7 @@ export default function Reader({
                 cardType="before"
                 section={section}
                 level={level}
+                onSectionVisible={onSectionVisible}
               />
               {sectionLines.map((line) => {
                 const showNumber = line.number % 5 === 0 || line.number === 1;
@@ -283,7 +287,9 @@ export default function Reader({
                 section={section}
                 level={level}
                 isCompleted={completedSections.has(section.id)}
-                onComplete={() => onSectionComplete(section.id)}
+                onComplete={(achievements) =>
+                  onSectionComplete(section.id, achievements)
+                }
               />
             </React.Fragment>
           );

@@ -82,3 +82,4 @@ Reference a specific piece of Johnathan's content that genuinely landed. Let the
 - [x] Session 3 - Section primer + chat interface (/api/primer streaming GET, /api/chat streaming POST, Primer.tsx foreword, Chat.tsx desktop sidebar + mobile drawer)
 - [ ] Session 4 - Prompt engineering pass, UI polish, deploy
 - [x] Session 5 - Section structure: 6 named sections (b1s1–b1s6), before/after SectionCards with lazy IntersectionObserver loading, section_progress Supabase table + API routes, progress persisted via gb_session cookie
+- [x] Session 6 - Reading progress visibility (ProgressBar 2px fixed top, current section label), annotation history drawer (AnnotationHistory bottom-left journal panel), gamification foundations (reading_streaks + achievements + session_achievements tables, upsert_reading_streak SQL function, checkAndUnlockAchievements), achievement toasts (AchievementToast slide-in, 4s auto-dismiss, queue support)

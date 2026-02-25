@@ -53,12 +53,20 @@ body {
   display: none;
 }
 
+/* ── Progress bar label (hidden on mobile) ────────────────────────────────── */
+.progress-label-desktop {
+  display: block;
+}
+
 @media (max-width: 600px) {
   .hidden-mobile {
     display: none;
   }
   .mobile-only {
     display: block;
+  }
+  .progress-label-desktop {
+    display: none;
   }
 }
 
@@ -282,6 +290,20 @@ body {
   .chat-close-mobile {
     display: block !important;
   }
+}
+
+/* ── Flipbook reader ────────────────────────────────────────────────────── */
+.flipbook-root {
+  width: min(92vw, 1100px);
+  height: min(82vh, 760px);
+  min-width: 320px;
+  min-height: 480px;
+}
+
+.flip-page {
+  background: #141311;
+  color: #f0ebe2;
+  border: 1px solid rgba(201, 168, 76, 0.35);
 }
 
 /* ── Scrollbar ───────────────────────────────────────────────────────────── */

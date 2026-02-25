@@ -123,6 +123,24 @@ export interface Database {
           }
         ];
       };
+      reading_streaks: {
+        Row: { id: string; session_id: string; date: string; sections_completed: number | null; annotations_made: number | null; };
+        Insert: { id?: string; session_id: string; date?: string; sections_completed?: number | null; annotations_made?: number | null; };
+        Update: { id?: string; session_id?: string; date?: string; sections_completed?: number | null; annotations_made?: number | null; };
+        Relationships: [];
+      };
+      achievements: {
+        Row: { id: string; title: string; description: string; icon: string; };
+        Insert: { id: string; title: string; description: string; icon: string; };
+        Update: { id?: string; title?: string; description?: string; icon?: string; };
+        Relationships: [];
+      };
+      session_achievements: {
+        Row: { id: string; session_id: string; achievement_id: string | null; unlocked_at: string | null; };
+        Insert: { id?: string; session_id: string; achievement_id?: string | null; unlocked_at?: string | null; };
+        Update: { id?: string; session_id?: string; achievement_id?: string | null; unlocked_at?: string | null; };
+        Relationships: [];
+      };
       section_progress: {
         Row: { id: string; session_id: string; section_id: string; completed_at: string | null; };
         Insert: { id?: string; session_id: string; section_id: string; completed_at?: string | null; };
@@ -174,7 +192,12 @@ export interface Database {
       };
     };
     Views: Record<string, never>;
-    Functions: Record<string, never>;
+    Functions: {
+      upsert_reading_streak: {
+        Args: { p_session_id: string; p_sections?: number; p_annotations?: number };
+        Returns: void;
+      };
+    };
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;
   };
