@@ -23,7 +23,7 @@ export default function Home() {
             style={{
               fontFamily:
                 "var(--font-cormorant), Georgia, 'Times New Roman', serif",
-              fontSize: "12px",
+              fontSize: "24px",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "#8a847a",

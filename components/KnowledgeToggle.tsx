@@ -28,7 +28,7 @@ export default function KnowledgeToggle({
       <p
         style={{
           fontFamily: "var(--font-cormorant), Georgia, serif",
-          fontSize: "11px",
+          fontSize: "24px",
           letterSpacing: "0.15em",
           textTransform: "uppercase",
           color: "#8a847a",
