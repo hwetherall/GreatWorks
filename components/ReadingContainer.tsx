@@ -5,6 +5,8 @@ import { KnowledgeLevel, KNOWLEDGE_LEVELS } from "@/lib/prompts";
 import KnowledgeToggle from "./KnowledgeToggle";
 import Reader from "./Reader";
 import AnnotationCard from "./AnnotationCard";
+import Primer from "./Primer";
+import Chat from "./Chat";
 
 const STORAGE_KEY = "greatbooks-knowledge-level";
 const DEFAULT_LEVEL: KnowledgeLevel = "casual";
@@ -46,6 +48,8 @@ export default function ReadingContainer() {
 
   return (
     <>
+      <Primer level={level} />
+
       <KnowledgeToggle value={level} onChange={handleLevelChange} />
 
       <Reader
@@ -63,6 +67,8 @@ export default function ReadingContainer() {
           onClose={handleAnnotationClose}
         />
       )}
+
+      <Chat level={level} />
     </>
   );
 }

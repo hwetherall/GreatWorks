@@ -171,6 +171,71 @@ body {
   }
 }
 
+/* ── Reading layout — shifts content left on desktop to make room for chat ── */
+.reading-layout {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 900px) {
+  .reading-layout {
+    padding-right: 356px; /* 340px chat panel + 16px gap */
+  }
+}
+
+/* ── Chat panel ──────────────────────────────────────────────────────────── */
+.chat-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100dvh;
+  width: 340px;
+  background: #0d0d0e;
+  border-left: 1px solid #2a2820;
+  display: flex;
+  flex-direction: column;
+  z-index: 30;
+}
+
+.chat-input::placeholder {
+  color: #4a4540;
+  font-style: italic;
+}
+
+.chat-input:focus {
+  border-color: #4a4540;
+}
+
+@media (max-width: 899px) {
+  /* On mobile: slide-up drawer, hidden by default */
+  .chat-panel {
+    width: 100vw;
+    top: auto;
+    bottom: 0;
+    height: 65dvh;
+    border-left: none;
+    border-top: 1px solid #2a2820;
+    border-radius: 12px 12px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.25s ease;
+    z-index: 35;
+  }
+
+  .chat-panel--open {
+    transform: translateY(0);
+  }
+
+  /* Show mobile toggle button */
+  .chat-toggle-mobile {
+    display: flex !important;
+  }
+
+  /* Show mobile close button */
+  .chat-close-mobile {
+    display: block !important;
+  }
+}
+
 /* ── Scrollbar ───────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 5px;

@@ -3,10 +3,10 @@ import ReadingContainer from "@/components/ReadingContainer";
 export default function Home() {
   return (
     <div
+      className="reading-layout"
       style={{
         minHeight: "100vh",
         backgroundColor: "#0d0d0e",
-        padding: "0 16px",
       }}
     >
       <main

@@ -79,5 +79,5 @@ Reference a specific piece of Johnathan's content that genuinely landed. Let the
 
 - [x] Session 1 - Project setup, Vercel + Supabase init, text loaded, basic reading view
 - [x] Session 2 - Inline annotation feature (ReadingContainer, AnnotationCard, /api/annotate streaming, prompt quality pass)
-- [ ] Session 3 - Section primer + chat interface
+- [x] Session 3 - Section primer + chat interface (/api/primer streaming GET, /api/chat streaming POST, Primer.tsx foreword, Chat.tsx desktop sidebar + mobile drawer)
 - [ ] Session 4 - Prompt engineering pass, UI polish, deploy
