@@ -108,13 +108,6 @@ export default function AnnotationCard({
     };
   }, [passage, lineRange, level]);
 
-  // Auto-scroll body as text streams in
-  useEffect(() => {
-    if (bodyRef.current) {
-      bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
-    }
-  }, [text]);
-
   // Close on Escape key
   useEffect(() => {
     function onKey(e: KeyboardEvent) {

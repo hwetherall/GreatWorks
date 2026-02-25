@@ -15,7 +15,7 @@ import AchievementToast from "./AchievementToast";
 
 const STORAGE_KEY = "greatbooks-knowledge-level";
 const READ_MODE_STORAGE_KEY = "greatbooks-read-mode";
-const DEFAULT_LEVEL: KnowledgeLevel = "casual";
+const DEFAULT_LEVEL: KnowledgeLevel = "noob";
 type ReadMode = "scroll" | "flip";
 
 interface AnnotationState {
