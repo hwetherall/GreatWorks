@@ -1,0 +1,3200 @@
+{
+  "title": "Paradise Lost",
+  "book": 1,
+  "year": 1674,
+  "author": "John Milton",
+  "lines": [
+    {
+      "number": 1,
+      "text": "Of Man’s first disobedience, and the fruit"
+    },
+    {
+      "number": 2,
+      "text": "Of that forbidden tree whose mortal taste"
+    },
+    {
+      "number": 3,
+      "text": "Brought death into the World, and all our woe,"
+    },
+    {
+      "number": 4,
+      "text": "With loss of Eden, till one greater Man"
+    },
+    {
+      "number": 5,
+      "text": "Restore us, and regain the blissful seat,"
+    },
+    {
+      "number": 6,
+      "text": "Sing, Heavenly Muse, that, on the secret top"
+    },
+    {
+      "number": 7,
+      "text": "Of Oreb, or of Sinai, didst inspire"
+    },
+    {
+      "number": 8,
+      "text": "That shepherd who first taught the chosen seed"
+    },
+    {
+      "number": 9,
+      "text": "In the beginning how the heavens and earth"
+    },
+    {
+      "number": 10,
+      "text": "Rose out of Chaos: or, if Sion hill"
+    },
+    {
+      "number": 11,
+      "text": "Delight thee more, and Siloa’s brook that flowed"
+    },
+    {
+      "number": 12,
+      "text": "Fast by the oracle of God, I thence"
+    },
+    {
+      "number": 13,
+      "text": "Invoke thy aid to my adventurous song,"
+    },
+    {
+      "number": 14,
+      "text": "That with no middle flight intends to soar"
+    },
+    {
+      "number": 15,
+      "text": "Above th’ Aonian mount, while it pursues"
+    },
+    {
+      "number": 16,
+      "text": "Things unattempted yet in prose or rhyme."
+    },
+    {
+      "number": 17,
+      "text": "And chiefly thou, O Spirit, that dost prefer"
+    },
+    {
+      "number": 18,
+      "text": "Before all temples th’ upright heart and pure,"
+    },
+    {
+      "number": 19,
+      "text": "Instruct me, for thou know’st; thou from the first"
+    },
+    {
+      "number": 20,
+      "text": "Wast present, and, with mighty wings outspread,"
+    },
+    {
+      "number": 21,
+      "text": "Dove-like sat’st brooding on the vast Abyss,"
+    },
+    {
+      "number": 22,
+      "text": "And mad’st it pregnant: what in me is dark"
+    },
+    {
+      "number": 23,
+      "text": "Illumine, what is low raise and support;"
+    },
+    {
+      "number": 24,
+      "text": "That, to the height of this great argument,"
+    },
+    {
+      "number": 25,
+      "text": "I may assert Eternal Providence,"
+    },
+    {
+      "number": 26,
+      "text": "And justify the ways of God to men."
+    },
+    {
+      "number": 27,
+      "text": "Say first—for Heaven hides nothing from thy view,"
+    },
+    {
+      "number": 28,
+      "text": "Nor the deep tract of Hell—say first what cause"
+    },
+    {
+      "number": 29,
+      "text": "Moved our grand parents, in that happy state,"
+    },
+    {
+      "number": 30,
+      "text": "Favoured of Heaven so highly, to fall off"
+    },
+    {
+      "number": 31,
+      "text": "From their Creator, and transgress his will"
+    },
+    {
+      "number": 32,
+      "text": "For one restraint, lords of the World besides."
+    },
+    {
+      "number": 33,
+      "text": "Who first seduced them to that foul revolt?"
+    },
+    {
+      "number": 34,
+      "text": "Th’ infernal Serpent; he it was whose guile,"
+    },
+    {
+      "number": 35,
+      "text": "Stirred up with envy and revenge, deceived"
+    },
+    {
+      "number": 36,
+      "text": "The mother of mankind, what time his pride"
+    },
+    {
+      "number": 37,
+      "text": "Had cast him out from Heaven, with all his host"
+    },
+    {
+      "number": 38,
+      "text": "Of rebel Angels, by whose aid, aspiring"
+    },
+    {
+      "number": 39,
+      "text": "To set himself in glory above his peers,"
+    },
+    {
+      "number": 40,
+      "text": "He trusted to have equalled the Most High,"
+    },
+    {
+      "number": 41,
+      "text": "If he opposed, and with ambitious aim"
+    },
+    {
+      "number": 42,
+      "text": "Against the throne and monarchy of God,"
+    },
+    {
+      "number": 43,
+      "text": "Raised impious war in Heaven and battle proud,"
+    },
+    {
+      "number": 44,
+      "text": "With vain attempt. Him the Almighty Power"
+    },
+    {
+      "number": 45,
+      "text": "Hurled headlong flaming from th’ ethereal sky,"
+    },
+    {
+      "number": 46,
+      "text": "With hideous ruin and combustion, down"
+    },
+    {
+      "number": 47,
+      "text": "To bottomless perdition, there to dwell"
+    },
+    {
+      "number": 48,
+      "text": "In adamantine chains and penal fire,"
+    },
+    {
+      "number": 49,
+      "text": "Who durst defy th’ Omnipotent to arms."
+    },
+    {
+      "number": 50,
+      "text": "Nine times the space that measures day and night"
+    },
+    {
+      "number": 51,
+      "text": "To mortal men, he, with his horrid crew,"
+    },
+    {
+      "number": 52,
+      "text": "Lay vanquished, rolling in the fiery gulf,"
+    },
+    {
+      "number": 53,
+      "text": "Confounded, though immortal. But his doom"
+    },
+    {
+      "number": 54,
+      "text": "Reserved him to more wrath; for now the thought"
+    },
+    {
+      "number": 55,
+      "text": "Both of lost happiness and lasting pain"
+    },
+    {
+      "number": 56,
+      "text": "Torments him: round he throws his baleful eyes,"
+    },
+    {
+      "number": 57,
+      "text": "That witnessed huge affliction and dismay,"
+    },
+    {
+      "number": 58,
+      "text": "Mixed with obdurate pride and steadfast hate."
+    },
+    {
+      "number": 59,
+      "text": "At once, as far as Angels ken, he views"
+    },
+    {
+      "number": 60,
+      "text": "The dismal situation waste and wild."
+    },
+    {
+      "number": 61,
+      "text": "A dungeon horrible, on all sides round,"
+    },
+    {
+      "number": 62,
+      "text": "As one great furnace flamed; yet from those flames"
+    },
+    {
+      "number": 63,
+      "text": "No light; but rather darkness visible"
+    },
+    {
+      "number": 64,
+      "text": "Served only to discover sights of woe,"
+    },
+    {
+      "number": 65,
+      "text": "Regions of sorrow, doleful shades, where peace"
+    },
+    {
+      "number": 66,
+      "text": "And rest can never dwell, hope never comes"
+    },
+    {
+      "number": 67,
+      "text": "That comes to all, but torture without end"
+    },
+    {
+      "number": 68,
+      "text": "Still urges, and a fiery deluge, fed"
+    },
+    {
+      "number": 69,
+      "text": "With ever-burning sulphur unconsumed."
+    },
+    {
+      "number": 70,
+      "text": "Such place Eternal Justice has prepared"
+    },
+    {
+      "number": 71,
+      "text": "For those rebellious; here their prison ordained"
+    },
+    {
+      "number": 72,
+      "text": "In utter darkness, and their portion set,"
+    },
+    {
+      "number": 73,
+      "text": "As far removed from God and light of Heaven"
+    },
+    {
+      "number": 74,
+      "text": "As from the centre thrice to th’ utmost pole."
+    },
+    {
+      "number": 75,
+      "text": "Oh how unlike the place from whence they fell!"
+    },
+    {
+      "number": 76,
+      "text": "There the companions of his fall, o’erwhelmed"
+    },
+    {
+      "number": 77,
+      "text": "With floods and whirlwinds of tempestuous fire,"
+    },
+    {
+      "number": 78,
+      "text": "He soon discerns; and, weltering by his side,"
+    },
+    {
+      "number": 79,
+      "text": "One next himself in power, and next in crime,"
+    },
+    {
+      "number": 80,
+      "text": "Long after known in Palestine, and named"
+    },
+    {
+      "number": 81,
+      "text": "Beelzebub. To whom th’ Arch-Enemy,"
+    },
+    {
+      "number": 82,
+      "text": "And thence in Heaven called Satan, with bold words"
+    },
+    {
+      "number": 83,
+      "text": "Breaking the horrid silence, thus began:—"
+    },
+    {
+      "number": 84,
+      "text": "“If thou beest he—but O how fallen! how changed"
+    },
+    {
+      "number": 85,
+      "text": "From him who, in the happy realms of light"
+    },
+    {
+      "number": 86,
+      "text": "Clothed with transcendent brightness, didst outshine"
+    },
+    {
+      "number": 87,
+      "text": "Myriads, though bright!—if he whom mutual league,"
+    },
+    {
+      "number": 88,
+      "text": "United thoughts and counsels, equal hope"
+    },
+    {
+      "number": 89,
+      "text": "And hazard in the glorious enterprise"
+    },
+    {
+      "number": 90,
+      "text": "Joined with me once, now misery hath joined"
+    },
+    {
+      "number": 91,
+      "text": "In equal ruin; into what pit thou seest"
+    },
+    {
+      "number": 92,
+      "text": "From what height fallen: so much the stronger proved"
+    },
+    {
+      "number": 93,
+      "text": "He with his thunder; and till then who knew"
+    },
+    {
+      "number": 94,
+      "text": "The force of those dire arms? Yet not for those,"
+    },
+    {
+      "number": 95,
+      "text": "Nor what the potent Victor in his rage"
+    },
+    {
+      "number": 96,
+      "text": "Can else inflict, do I repent, or change,"
+    },
+    {
+      "number": 97,
+      "text": "Though changed in outward lustre, that fixed mind,"
+    },
+    {
+      "number": 98,
+      "text": "And high disdain from sense of injured merit,"
+    },
+    {
+      "number": 99,
+      "text": "That with the Mightiest raised me to contend,"
+    },
+    {
+      "number": 100,
+      "text": "And to the fierce contentions brought along"
+    },
+    {
+      "number": 101,
+      "text": "Innumerable force of Spirits armed,"
+    },
+    {
+      "number": 102,
+      "text": "That durst dislike his reign, and, me preferring,"
+    },
+    {
+      "number": 103,
+      "text": "His utmost power with adverse power opposed"
+    },
+    {
+      "number": 104,
+      "text": "In dubious battle on the plains of Heaven,"
+    },
+    {
+      "number": 105,
+      "text": "And shook his throne. What though the field be lost?"
+    },
+    {
+      "number": 106,
+      "text": "All is not lost—the unconquerable will,"
+    },
+    {
+      "number": 107,
+      "text": "And study of revenge, immortal hate,"
+    },
+    {
+      "number": 108,
+      "text": "And courage never to submit or yield:"
+    },
+    {
+      "number": 109,
+      "text": "And what is else not to be overcome?"
+    },
+    {
+      "number": 110,
+      "text": "That glory never shall his wrath or might"
+    },
+    {
+      "number": 111,
+      "text": "Extort from me. To bow and sue for grace"
+    },
+    {
+      "number": 112,
+      "text": "With suppliant knee, and deify his power"
+    },
+    {
+      "number": 113,
+      "text": "Who, from the terror of this arm, so late"
+    },
+    {
+      "number": 114,
+      "text": "Doubted his empire—that were low indeed;"
+    },
+    {
+      "number": 115,
+      "text": "That were an ignominy and shame beneath"
+    },
+    {
+      "number": 116,
+      "text": "This downfall; since, by fate, the strength of Gods,"
+    },
+    {
+      "number": 117,
+      "text": "And this empyreal substance, cannot fail;"
+    },
+    {
+      "number": 118,
+      "text": "Since, through experience of this great event,"
+    },
+    {
+      "number": 119,
+      "text": "In arms not worse, in foresight much advanced,"
+    },
+    {
+      "number": 120,
+      "text": "We may with more successful hope resolve"
+    },
+    {
+      "number": 121,
+      "text": "To wage by force or guile eternal war,"
+    },
+    {
+      "number": 122,
+      "text": "Irreconcilable to our grand Foe,"
+    },
+    {
+      "number": 123,
+      "text": "Who now triumphs, and in th’ excess of joy"
+    },
+    {
+      "number": 124,
+      "text": "Sole reigning holds the tyranny of Heaven.”"
+    },
+    {
+      "number": 125,
+      "text": "So spake th’ apostate Angel, though in pain,"
+    },
+    {
+      "number": 126,
+      "text": "Vaunting aloud, but racked with deep despair;"
+    },
+    {
+      "number": 127,
+      "text": "And him thus answered soon his bold compeer:—"
+    },
+    {
+      "number": 128,
+      "text": "“O Prince, O Chief of many throned Powers"
+    },
+    {
+      "number": 129,
+      "text": "That led th’ embattled Seraphim to war"
+    },
+    {
+      "number": 130,
+      "text": "Under thy conduct, and, in dreadful deeds"
+    },
+    {
+      "number": 131,
+      "text": "Fearless, endangered Heaven’s perpetual King,"
+    },
+    {
+      "number": 132,
+      "text": "And put to proof his high supremacy,"
+    },
+    {
+      "number": 133,
+      "text": "Whether upheld by strength, or chance, or fate,"
+    },
+    {
+      "number": 134,
+      "text": "Too well I see and rue the dire event"
+    },
+    {
+      "number": 135,
+      "text": "That, with sad overthrow and foul defeat,"
+    },
+    {
+      "number": 136,
+      "text": "Hath lost us Heaven, and all this mighty host"
+    },
+    {
+      "number": 137,
+      "text": "In horrible destruction laid thus low,"
+    },
+    {
+      "number": 138,
+      "text": "As far as Gods and heavenly Essences"
+    },
+    {
+      "number": 139,
+      "text": "Can perish: for the mind and spirit remains"
+    },
+    {
+      "number": 140,
+      "text": "Invincible, and vigour soon returns,"
+    },
+    {
+      "number": 141,
+      "text": "Though all our glory extinct, and happy state"
+    },
+    {
+      "number": 142,
+      "text": "Here swallowed up in endless misery."
+    },
+    {
+      "number": 143,
+      "text": "But what if he our Conqueror (whom I now"
+    },
+    {
+      "number": 144,
+      "text": "Of force believe almighty, since no less"
+    },
+    {
+      "number": 145,
+      "text": "Than such could have o’erpowered such force as ours)"
+    },
+    {
+      "number": 146,
+      "text": "Have left us this our spirit and strength entire,"
+    },
+    {
+      "number": 147,
+      "text": "Strongly to suffer and support our pains,"
+    },
+    {
+      "number": 148,
+      "text": "That we may so suffice his vengeful ire,"
+    },
+    {
+      "number": 149,
+      "text": "Or do him mightier service as his thralls"
+    },
+    {
+      "number": 150,
+      "text": "By right of war, whate’er his business be,"
+    },
+    {
+      "number": 151,
+      "text": "Here in the heart of Hell to work in fire,"
+    },
+    {
+      "number": 152,
+      "text": "Or do his errands in the gloomy Deep?"
+    },
+    {
+      "number": 153,
+      "text": "What can it then avail though yet we feel"
+    },
+    {
+      "number": 154,
+      "text": "Strength undiminished, or eternal being"
+    },
+    {
+      "number": 155,
+      "text": "To undergo eternal punishment?”"
+    },
+    {
+      "number": 156,
+      "text": "Whereto with speedy words th’ Arch-Fiend replied:—"
+    },
+    {
+      "number": 157,
+      "text": "“Fallen Cherub, to be weak is miserable,"
+    },
+    {
+      "number": 158,
+      "text": "Doing or suffering: but of this be sure—"
+    },
+    {
+      "number": 159,
+      "text": "To do aught good never will be our task,"
+    },
+    {
+      "number": 160,
+      "text": "But ever to do ill our sole delight,"
+    },
+    {
+      "number": 161,
+      "text": "As being the contrary to his high will"
+    },
+    {
+      "number": 162,
+      "text": "Whom we resist. If then his providence"
+    },
+    {
+      "number": 163,
+      "text": "Out of our evil seek to bring forth good,"
+    },
+    {
+      "number": 164,
+      "text": "Our labour must be to pervert that end,"
+    },
+    {
+      "number": 165,
+      "text": "And out of good still to find means of evil;"
+    },
+    {
+      "number": 166,
+      "text": "Which ofttimes may succeed so as perhaps"
+    },
+    {
+      "number": 167,
+      "text": "Shall grieve him, if I fail not, and disturb"
+    },
+    {
+      "number": 168,
+      "text": "His inmost counsels from their destined aim."
+    },
+    {
+      "number": 169,
+      "text": "But see! the angry Victor hath recalled"
+    },
+    {
+      "number": 170,
+      "text": "His ministers of vengeance and pursuit"
+    },
+    {
+      "number": 171,
+      "text": "Back to the gates of Heaven: the sulphurous hail,"
+    },
+    {
+      "number": 172,
+      "text": "Shot after us in storm, o’erblown hath laid"
+    },
+    {
+      "number": 173,
+      "text": "The fiery surge that from the precipice"
+    },
+    {
+      "number": 174,
+      "text": "Of Heaven received us falling; and the thunder,"
+    },
+    {
+      "number": 175,
+      "text": "Winged with red lightning and impetuous rage,"
+    },
+    {
+      "number": 176,
+      "text": "Perhaps hath spent his shafts, and ceases now"
+    },
+    {
+      "number": 177,
+      "text": "To bellow through the vast and boundless Deep."
+    },
+    {
+      "number": 178,
+      "text": "Let us not slip th’ occasion, whether scorn"
+    },
+    {
+      "number": 179,
+      "text": "Or satiate fury yield it from our Foe."
+    },
+    {
+      "number": 180,
+      "text": "Seest thou yon dreary plain, forlorn and wild,"
+    },
+    {
+      "number": 181,
+      "text": "The seat of desolation, void of light,"
+    },
+    {
+      "number": 182,
+      "text": "Save what the glimmering of these livid flames"
+    },
+    {
+      "number": 183,
+      "text": "Casts pale and dreadful? Thither let us tend"
+    },
+    {
+      "number": 184,
+      "text": "From off the tossing of these fiery waves;"
+    },
+    {
+      "number": 185,
+      "text": "There rest, if any rest can harbour there;"
+    },
+    {
+      "number": 186,
+      "text": "And, re-assembling our afflicted powers,"
+    },
+    {
+      "number": 187,
+      "text": "Consult how we may henceforth most offend"
+    },
+    {
+      "number": 188,
+      "text": "Our enemy, our own loss how repair,"
+    },
+    {
+      "number": 189,
+      "text": "How overcome this dire calamity,"
+    },
+    {
+      "number": 190,
+      "text": "What reinforcement we may gain from hope,"
+    },
+    {
+      "number": 191,
+      "text": "If not, what resolution from despair.”"
+    },
+    {
+      "number": 192,
+      "text": "Thus Satan, talking to his nearest mate,"
+    },
+    {
+      "number": 193,
+      "text": "With head uplift above the wave, and eyes"
+    },
+    {
+      "number": 194,
+      "text": "That sparkling blazed; his other parts besides"
+    },
+    {
+      "number": 195,
+      "text": "Prone on the flood, extended long and large,"
+    },
+    {
+      "number": 196,
+      "text": "Lay floating many a rood, in bulk as huge"
+    },
+    {
+      "number": 197,
+      "text": "As whom the fables name of monstrous size,"
+    },
+    {
+      "number": 198,
+      "text": "Titanian or Earth-born, that warred on Jove,"
+    },
+    {
+      "number": 199,
+      "text": "Briareos or Typhon, whom the den"
+    },
+    {
+      "number": 200,
+      "text": "By ancient Tarsus held, or that sea-beast"
+    },
+    {
+      "number": 201,
+      "text": "Leviathan, which God of all his works"
+    },
+    {
+      "number": 202,
+      "text": "Created hugest that swim th’ ocean-stream."
+    },
+    {
+      "number": 203,
+      "text": "Him, haply slumbering on the Norway foam,"
+    },
+    {
+      "number": 204,
+      "text": "The pilot of some small night-foundered skiff,"
+    },
+    {
+      "number": 205,
+      "text": "Deeming some island, oft, as seamen tell,"
+    },
+    {
+      "number": 206,
+      "text": "With fixed anchor in his scaly rind,"
+    },
+    {
+      "number": 207,
+      "text": "Moors by his side under the lee, while night"
+    },
+    {
+      "number": 208,
+      "text": "Invests the sea, and wished morn delays."
+    },
+    {
+      "number": 209,
+      "text": "So stretched out huge in length the Arch-fiend lay,"
+    },
+    {
+      "number": 210,
+      "text": "Chained on the burning lake; nor ever thence"
+    },
+    {
+      "number": 211,
+      "text": "Had risen, or heaved his head, but that the will"
+    },
+    {
+      "number": 212,
+      "text": "And high permission of all-ruling Heaven"
+    },
+    {
+      "number": 213,
+      "text": "Left him at large to his own dark designs,"
+    },
+    {
+      "number": 214,
+      "text": "That with reiterated crimes he might"
+    },
+    {
+      "number": 215,
+      "text": "Heap on himself damnation, while he sought"
+    },
+    {
+      "number": 216,
+      "text": "Evil to others, and enraged might see"
+    },
+    {
+      "number": 217,
+      "text": "How all his malice served but to bring forth"
+    },
+    {
+      "number": 218,
+      "text": "Infinite goodness, grace, and mercy, shewn"
+    },
+    {
+      "number": 219,
+      "text": "On Man by him seduced, but on himself"
+    },
+    {
+      "number": 220,
+      "text": "Treble confusion, wrath, and vengeance poured."
+    },
+    {
+      "number": 221,
+      "text": "Forthwith upright he rears from off the pool"
+    },
+    {
+      "number": 222,
+      "text": "His mighty stature; on each hand the flames"
+    },
+    {
+      "number": 223,
+      "text": "Driven backward slope their pointing spires, and rolled"
+    },
+    {
+      "number": 224,
+      "text": "In billows, leave i’ th’ midst a horrid vale."
+    },
+    {
+      "number": 225,
+      "text": "Then with expanded wings he steers his flight"
+    },
+    {
+      "number": 226,
+      "text": "Aloft, incumbent on the dusky air,"
+    },
+    {
+      "number": 227,
+      "text": "That felt unusual weight; till on dry land"
+    },
+    {
+      "number": 228,
+      "text": "He lights—if it were land that ever burned"
+    },
+    {
+      "number": 229,
+      "text": "With solid, as the lake with liquid fire,"
+    },
+    {
+      "number": 230,
+      "text": "And such appeared in hue as when the force"
+    },
+    {
+      "number": 231,
+      "text": "Of subterranean wind transports a hill"
+    },
+    {
+      "number": 232,
+      "text": "Torn from Pelorus, or the shattered side"
+    },
+    {
+      "number": 233,
+      "text": "Of thundering Etna, whose combustible"
+    },
+    {
+      "number": 234,
+      "text": "And fuelled entrails, thence conceiving fire,"
+    },
+    {
+      "number": 235,
+      "text": "Sublimed with mineral fury, aid the winds,"
+    },
+    {
+      "number": 236,
+      "text": "And leave a singed bottom all involved"
+    },
+    {
+      "number": 237,
+      "text": "With stench and smoke. Such resting found the sole"
+    },
+    {
+      "number": 238,
+      "text": "Of unblest feet. Him followed his next mate;"
+    },
+    {
+      "number": 239,
+      "text": "Both glorying to have scaped the Stygian flood"
+    },
+    {
+      "number": 240,
+      "text": "As gods, and by their own recovered strength,"
+    },
+    {
+      "number": 241,
+      "text": "Not by the sufferance of supernal Power."
+    },
+    {
+      "number": 242,
+      "text": "“Is this the region, this the soil, the clime,”"
+    },
+    {
+      "number": 243,
+      "text": "Said then the lost Archangel, “this the seat"
+    },
+    {
+      "number": 244,
+      "text": "That we must change for Heaven?—this mournful gloom"
+    },
+    {
+      "number": 245,
+      "text": "For that celestial light? Be it so, since he"
+    },
+    {
+      "number": 246,
+      "text": "Who now is sovereign can dispose and bid"
+    },
+    {
+      "number": 247,
+      "text": "What shall be right: farthest from him is best"
+    },
+    {
+      "number": 248,
+      "text": "Whom reason hath equalled, force hath made supreme"
+    },
+    {
+      "number": 249,
+      "text": "Above his equals. Farewell, happy fields,"
+    },
+    {
+      "number": 250,
+      "text": "Where joy for ever dwells! Hail, horrors! hail,"
+    },
+    {
+      "number": 251,
+      "text": "Infernal world! and thou, profoundest Hell,"
+    },
+    {
+      "number": 252,
+      "text": "Receive thy new possessor—one who brings"
+    },
+    {
+      "number": 253,
+      "text": "A mind not to be changed by place or time."
+    },
+    {
+      "number": 254,
+      "text": "The mind is its own place, and in itself"
+    },
+    {
+      "number": 255,
+      "text": "Can make a Heaven of Hell, a Hell of Heaven."
+    },
+    {
+      "number": 256,
+      "text": "What matter where, if I be still the same,"
+    },
+    {
+      "number": 257,
+      "text": "And what I should be, all but less than he"
+    },
+    {
+      "number": 258,
+      "text": "Whom thunder hath made greater? Here at least"
+    },
+    {
+      "number": 259,
+      "text": "We shall be free; th’ Almighty hath not built"
+    },
+    {
+      "number": 260,
+      "text": "Here for his envy, will not drive us hence:"
+    },
+    {
+      "number": 261,
+      "text": "Here we may reign secure; and, in my choice,"
+    },
+    {
+      "number": 262,
+      "text": "To reign is worth ambition, though in Hell:"
+    },
+    {
+      "number": 263,
+      "text": "Better to reign in Hell than serve in Heaven."
+    },
+    {
+      "number": 264,
+      "text": "But wherefore let we then our faithful friends,"
+    },
+    {
+      "number": 265,
+      "text": "Th’ associates and co-partners of our loss,"
+    },
+    {
+      "number": 266,
+      "text": "Lie thus astonished on th’ oblivious pool,"
+    },
+    {
+      "number": 267,
+      "text": "And call them not to share with us their part"
+    },
+    {
+      "number": 268,
+      "text": "In this unhappy mansion, or once more"
+    },
+    {
+      "number": 269,
+      "text": "With rallied arms to try what may be yet"
+    },
+    {
+      "number": 270,
+      "text": "Regained in Heaven, or what more lost in Hell?”"
+    },
+    {
+      "number": 271,
+      "text": "So Satan spake; and him Beelzebub"
+    },
+    {
+      "number": 272,
+      "text": "Thus answered:—“Leader of those armies bright"
+    },
+    {
+      "number": 273,
+      "text": "Which, but th’ Omnipotent, none could have foiled!"
+    },
+    {
+      "number": 274,
+      "text": "If once they hear that voice, their liveliest pledge"
+    },
+    {
+      "number": 275,
+      "text": "Of hope in fears and dangers—heard so oft"
+    },
+    {
+      "number": 276,
+      "text": "In worst extremes, and on the perilous edge"
+    },
+    {
+      "number": 277,
+      "text": "Of battle, when it raged, in all assaults"
+    },
+    {
+      "number": 278,
+      "text": "Their surest signal—they will soon resume"
+    },
+    {
+      "number": 279,
+      "text": "New courage and revive, though now they lie"
+    },
+    {
+      "number": 280,
+      "text": "Grovelling and prostrate on yon lake of fire,"
+    },
+    {
+      "number": 281,
+      "text": "As we erewhile, astounded and amazed;"
+    },
+    {
+      "number": 282,
+      "text": "No wonder, fallen such a pernicious height!”"
+    },
+    {
+      "number": 283,
+      "text": "He scarce had ceased when the superior Fiend"
+    },
+    {
+      "number": 284,
+      "text": "Was moving toward the shore; his ponderous shield,"
+    },
+    {
+      "number": 285,
+      "text": "Ethereal temper, massy, large, and round,"
+    },
+    {
+      "number": 286,
+      "text": "Behind him cast. The broad circumference"
+    },
+    {
+      "number": 287,
+      "text": "Hung on his shoulders like the moon, whose orb"
+    },
+    {
+      "number": 288,
+      "text": "Through optic glass the Tuscan artist views"
+    },
+    {
+      "number": 289,
+      "text": "At evening, from the top of Fesole,"
+    },
+    {
+      "number": 290,
+      "text": "Or in Valdarno, to descry new lands,"
+    },
+    {
+      "number": 291,
+      "text": "Rivers, or mountains, in her spotty globe."
+    },
+    {
+      "number": 292,
+      "text": "His spear—to equal which the tallest pine"
+    },
+    {
+      "number": 293,
+      "text": "Hewn on Norwegian hills, to be the mast"
+    },
+    {
+      "number": 294,
+      "text": "Of some great ammiral, were but a wand—"
+    },
+    {
+      "number": 295,
+      "text": "He walked with, to support uneasy steps"
+    },
+    {
+      "number": 296,
+      "text": "Over the burning marl, not like those steps"
+    },
+    {
+      "number": 297,
+      "text": "On Heaven’s azure; and the torrid clime"
+    },
+    {
+      "number": 298,
+      "text": "Smote on him sore besides, vaulted with fire."
+    },
+    {
+      "number": 299,
+      "text": "Nathless he so endured, till on the beach"
+    },
+    {
+      "number": 300,
+      "text": "Of that inflamed sea he stood, and called"
+    },
+    {
+      "number": 301,
+      "text": "His legions—Angel Forms, who lay entranced"
+    },
+    {
+      "number": 302,
+      "text": "Thick as autumnal leaves that strow the brooks"
+    },
+    {
+      "number": 303,
+      "text": "In Vallombrosa, where th’ Etrurian shades"
+    },
+    {
+      "number": 304,
+      "text": "High over-arched embower; or scattered sedge"
+    },
+    {
+      "number": 305,
+      "text": "Afloat, when with fierce winds Orion armed"
+    },
+    {
+      "number": 306,
+      "text": "Hath vexed the Red-Sea coast, whose waves o’erthrew"
+    },
+    {
+      "number": 307,
+      "text": "Busiris and his Memphian chivalry,"
+    },
+    {
+      "number": 308,
+      "text": "While with perfidious hatred they pursued"
+    },
+    {
+      "number": 309,
+      "text": "The sojourners of Goshen, who beheld"
+    },
+    {
+      "number": 310,
+      "text": "From the safe shore their floating carcases"
+    },
+    {
+      "number": 311,
+      "text": "And broken chariot-wheels. So thick bestrown,"
+    },
+    {
+      "number": 312,
+      "text": "Abject and lost, lay these, covering the flood,"
+    },
+    {
+      "number": 313,
+      "text": "Under amazement of their hideous change."
+    },
+    {
+      "number": 314,
+      "text": "He called so loud that all the hollow deep"
+    },
+    {
+      "number": 315,
+      "text": "Of Hell resounded:—“Princes, Potentates,"
+    },
+    {
+      "number": 316,
+      "text": "Warriors, the Flower of Heaven—once yours; now lost,"
+    },
+    {
+      "number": 317,
+      "text": "If such astonishment as this can seize"
+    },
+    {
+      "number": 318,
+      "text": "Eternal Spirits! Or have ye chosen this place"
+    },
+    {
+      "number": 319,
+      "text": "After the toil of battle to repose"
+    },
+    {
+      "number": 320,
+      "text": "Your wearied virtue, for the ease you find"
+    },
+    {
+      "number": 321,
+      "text": "To slumber here, as in the vales of Heaven?"
+    },
+    {
+      "number": 322,
+      "text": "Or in this abject posture have ye sworn"
+    },
+    {
+      "number": 323,
+      "text": "To adore the Conqueror, who now beholds"
+    },
+    {
+      "number": 324,
+      "text": "Cherub and Seraph rolling in the flood"
+    },
+    {
+      "number": 325,
+      "text": "With scattered arms and ensigns, till anon"
+    },
+    {
+      "number": 326,
+      "text": "His swift pursuers from Heaven-gates discern"
+    },
+    {
+      "number": 327,
+      "text": "Th’ advantage, and, descending, tread us down"
+    },
+    {
+      "number": 328,
+      "text": "Thus drooping, or with linked thunderbolts"
+    },
+    {
+      "number": 329,
+      "text": "Transfix us to the bottom of this gulf?"
+    },
+    {
+      "number": 330,
+      "text": "Awake, arise, or be for ever fallen!”"
+    },
+    {
+      "number": 331,
+      "text": "They heard, and were abashed, and up they sprung"
+    },
+    {
+      "number": 332,
+      "text": "Upon the wing, as when men wont to watch"
+    },
+    {
+      "number": 333,
+      "text": "On duty, sleeping found by whom they dread,"
+    },
+    {
+      "number": 334,
+      "text": "Rouse and bestir themselves ere well awake."
+    },
+    {
+      "number": 335,
+      "text": "Nor did they not perceive the evil plight"
+    },
+    {
+      "number": 336,
+      "text": "In which they were, or the fierce pains not feel;"
+    },
+    {
+      "number": 337,
+      "text": "Yet to their General’s voice they soon obeyed"
+    },
+    {
+      "number": 338,
+      "text": "Innumerable. As when the potent rod"
+    },
+    {
+      "number": 339,
+      "text": "Of Amram’s son, in Egypt’s evil day,"
+    },
+    {
+      "number": 340,
+      "text": "Waved round the coast, up-called a pitchy cloud"
+    },
+    {
+      "number": 341,
+      "text": "Of locusts, warping on the eastern wind,"
+    },
+    {
+      "number": 342,
+      "text": "That o’er the realm of impious Pharaoh hung"
+    },
+    {
+      "number": 343,
+      "text": "Like Night, and darkened all the land of Nile;"
+    },
+    {
+      "number": 344,
+      "text": "So numberless were those bad Angels seen"
+    },
+    {
+      "number": 345,
+      "text": "Hovering on wing under the cope of Hell,"
+    },
+    {
+      "number": 346,
+      "text": "’Twixt upper, nether, and surrounding fires;"
+    },
+    {
+      "number": 347,
+      "text": "Till, as a signal given, th’ uplifted spear"
+    },
+    {
+      "number": 348,
+      "text": "Of their great Sultan waving to direct"
+    },
+    {
+      "number": 349,
+      "text": "Their course, in even balance down they light"
+    },
+    {
+      "number": 350,
+      "text": "On the firm brimstone, and fill all the plain:"
+    },
+    {
+      "number": 351,
+      "text": "A multitude like which the populous North"
+    },
+    {
+      "number": 352,
+      "text": "Poured never from her frozen loins to pass"
+    },
+    {
+      "number": 353,
+      "text": "Rhene or the Danaw, when her barbarous sons"
+    },
+    {
+      "number": 354,
+      "text": "Came like a deluge on the South, and spread"
+    },
+    {
+      "number": 355,
+      "text": "Beneath Gibraltar to the Libyan sands."
+    },
+    {
+      "number": 356,
+      "text": "Forthwith, form every squadron and each band,"
+    },
+    {
+      "number": 357,
+      "text": "The heads and leaders thither haste where stood"
+    },
+    {
+      "number": 358,
+      "text": "Their great Commander—godlike Shapes, and Forms"
+    },
+    {
+      "number": 359,
+      "text": "Excelling human; princely Dignities;"
+    },
+    {
+      "number": 360,
+      "text": "And Powers that erst in Heaven sat on thrones,"
+    },
+    {
+      "number": 361,
+      "text": "Though on their names in Heavenly records now"
+    },
+    {
+      "number": 362,
+      "text": "Be no memorial, blotted out and rased"
+    },
+    {
+      "number": 363,
+      "text": "By their rebellion from the Books of Life."
+    },
+    {
+      "number": 364,
+      "text": "Nor had they yet among the sons of Eve"
+    },
+    {
+      "number": 365,
+      "text": "Got them new names, till, wandering o’er the earth,"
+    },
+    {
+      "number": 366,
+      "text": "Through God’s high sufferance for the trial of man,"
+    },
+    {
+      "number": 367,
+      "text": "By falsities and lies the greatest part"
+    },
+    {
+      "number": 368,
+      "text": "Of mankind they corrupted to forsake"
+    },
+    {
+      "number": 369,
+      "text": "God their Creator, and th’ invisible"
+    },
+    {
+      "number": 370,
+      "text": "Glory of him that made them to transform"
+    },
+    {
+      "number": 371,
+      "text": "Oft to the image of a brute, adorned"
+    },
+    {
+      "number": 372,
+      "text": "With gay religions full of pomp and gold,"
+    },
+    {
+      "number": 373,
+      "text": "And devils to adore for deities:"
+    },
+    {
+      "number": 374,
+      "text": "Then were they known to men by various names,"
+    },
+    {
+      "number": 375,
+      "text": "And various idols through the heathen world."
+    },
+    {
+      "number": 376,
+      "text": "Say, Muse, their names then known, who first, who last,"
+    },
+    {
+      "number": 377,
+      "text": "Roused from the slumber on that fiery couch,"
+    },
+    {
+      "number": 378,
+      "text": "At their great Emperorr’s call, as next in worth"
+    },
+    {
+      "number": 379,
+      "text": "Came singly where he stood on the bare strand,"
+    },
+    {
+      "number": 380,
+      "text": "While the promiscuous crowd stood yet aloof?"
+    },
+    {
+      "number": 381,
+      "text": "The chief were those who, from the pit of Hell"
+    },
+    {
+      "number": 382,
+      "text": "Roaming to seek their prey on Earth, durst fix"
+    },
+    {
+      "number": 383,
+      "text": "Their seats, long after, next the seat of God,"
+    },
+    {
+      "number": 384,
+      "text": "Their altars by his altar, gods adored"
+    },
+    {
+      "number": 385,
+      "text": "Among the nations round, and durst abide"
+    },
+    {
+      "number": 386,
+      "text": "Jehovah thundering out of Sion, throned"
+    },
+    {
+      "number": 387,
+      "text": "Between the Cherubim; yea, often placed"
+    },
+    {
+      "number": 388,
+      "text": "Within his sanctuary itself their shrines,"
+    },
+    {
+      "number": 389,
+      "text": "Abominations; and with cursed things"
+    },
+    {
+      "number": 390,
+      "text": "His holy rites and solemn feasts profaned,"
+    },
+    {
+      "number": 391,
+      "text": "And with their darkness durst affront his light."
+    },
+    {
+      "number": 392,
+      "text": "First, Moloch, horrid king, besmeared with blood"
+    },
+    {
+      "number": 393,
+      "text": "Of human sacrifice, and parents’ tears;"
+    },
+    {
+      "number": 394,
+      "text": "Though, for the noise of drums and timbrels loud,"
+    },
+    {
+      "number": 395,
+      "text": "Their children’s cries unheard that passed through fire"
+    },
+    {
+      "number": 396,
+      "text": "To his grim idol. Him the Ammonite"
+    },
+    {
+      "number": 397,
+      "text": "Worshiped in Rabba and her watery plain,"
+    },
+    {
+      "number": 398,
+      "text": "In Argob and in Basan, to the stream"
+    },
+    {
+      "number": 399,
+      "text": "Of utmost Arnon. Nor content with such"
+    },
+    {
+      "number": 400,
+      "text": "Audacious neighbourhood, the wisest heart"
+    },
+    {
+      "number": 401,
+      "text": "Of Solomon he led by fraud to build"
+    },
+    {
+      "number": 402,
+      "text": "His temple right against the temple of God"
+    },
+    {
+      "number": 403,
+      "text": "On that opprobrious hill, and made his grove"
+    },
+    {
+      "number": 404,
+      "text": "The pleasant valley of Hinnom, Tophet thence"
+    },
+    {
+      "number": 405,
+      "text": "And black Gehenna called, the type of Hell."
+    },
+    {
+      "number": 406,
+      "text": "Next Chemos, th’ obscene dread of Moab’s sons,"
+    },
+    {
+      "number": 407,
+      "text": "From Aroar to Nebo and the wild"
+    },
+    {
+      "number": 408,
+      "text": "Of southmost Abarim; in Hesebon"
+    },
+    {
+      "number": 409,
+      "text": "And Horonaim, Seon’s real, beyond"
+    },
+    {
+      "number": 410,
+      "text": "The flowery dale of Sibma clad with vines,"
+    },
+    {
+      "number": 411,
+      "text": "And Eleale to th’ Asphaltic Pool:"
+    },
+    {
+      "number": 412,
+      "text": "Peor his other name, when he enticed"
+    },
+    {
+      "number": 413,
+      "text": "Israel in Sittim, on their march from Nile,"
+    },
+    {
+      "number": 414,
+      "text": "To do him wanton rites, which cost them woe."
+    },
+    {
+      "number": 415,
+      "text": "Yet thence his lustful orgies he enlarged"
+    },
+    {
+      "number": 416,
+      "text": "Even to that hill of scandal, by the grove"
+    },
+    {
+      "number": 417,
+      "text": "Of Moloch homicide, lust hard by hate,"
+    },
+    {
+      "number": 418,
+      "text": "Till good Josiah drove them thence to Hell."
+    },
+    {
+      "number": 419,
+      "text": "With these came they who, from the bordering flood"
+    },
+    {
+      "number": 420,
+      "text": "Of old Euphrates to the brook that parts"
+    },
+    {
+      "number": 421,
+      "text": "Egypt from Syrian ground, had general names"
+    },
+    {
+      "number": 422,
+      "text": "Of Baalim and Ashtaroth—those male,"
+    },
+    {
+      "number": 423,
+      "text": "These feminine. For Spirits, when they please,"
+    },
+    {
+      "number": 424,
+      "text": "Can either sex assume, or both; so soft"
+    },
+    {
+      "number": 425,
+      "text": "And uncompounded is their essence pure,"
+    },
+    {
+      "number": 426,
+      "text": "Not tried or manacled with joint or limb,"
+    },
+    {
+      "number": 427,
+      "text": "Nor founded on the brittle strength of bones,"
+    },
+    {
+      "number": 428,
+      "text": "Like cumbrous flesh; but, in what shape they choose,"
+    },
+    {
+      "number": 429,
+      "text": "Dilated or condensed, bright or obscure,"
+    },
+    {
+      "number": 430,
+      "text": "Can execute their airy purposes,"
+    },
+    {
+      "number": 431,
+      "text": "And works of love or enmity fulfil."
+    },
+    {
+      "number": 432,
+      "text": "For those the race of Israel oft forsook"
+    },
+    {
+      "number": 433,
+      "text": "Their Living Strength, and unfrequented left"
+    },
+    {
+      "number": 434,
+      "text": "His righteous altar, bowing lowly down"
+    },
+    {
+      "number": 435,
+      "text": "To bestial gods; for which their heads as low"
+    },
+    {
+      "number": 436,
+      "text": "Bowed down in battle, sunk before the spear"
+    },
+    {
+      "number": 437,
+      "text": "Of despicable foes. With these in troop"
+    },
+    {
+      "number": 438,
+      "text": "Came Astoreth, whom the Phoenicians called"
+    },
+    {
+      "number": 439,
+      "text": "Astarte, queen of heaven, with crescent horns;"
+    },
+    {
+      "number": 440,
+      "text": "To whose bright image nightly by the moon"
+    },
+    {
+      "number": 441,
+      "text": "Sidonian virgins paid their vows and songs;"
+    },
+    {
+      "number": 442,
+      "text": "In Sion also not unsung, where stood"
+    },
+    {
+      "number": 443,
+      "text": "Her temple on th’ offensive mountain, built"
+    },
+    {
+      "number": 444,
+      "text": "By that uxorious king whose heart, though large,"
+    },
+    {
+      "number": 445,
+      "text": "Beguiled by fair idolatresses, fell"
+    },
+    {
+      "number": 446,
+      "text": "To idols foul. Thammuz came next behind,"
+    },
+    {
+      "number": 447,
+      "text": "Whose annual wound in Lebanon allured"
+    },
+    {
+      "number": 448,
+      "text": "The Syrian damsels to lament his fate"
+    },
+    {
+      "number": 449,
+      "text": "In amorous ditties all a summer’s day,"
+    },
+    {
+      "number": 450,
+      "text": "While smooth Adonis from his native rock"
+    },
+    {
+      "number": 451,
+      "text": "Ran purple to the sea, supposed with blood"
+    },
+    {
+      "number": 452,
+      "text": "Of Thammuz yearly wounded: the love-tale"
+    },
+    {
+      "number": 453,
+      "text": "Infected Sion’s daughters with like heat,"
+    },
+    {
+      "number": 454,
+      "text": "Whose wanton passions in the sacred porch"
+    },
+    {
+      "number": 455,
+      "text": "Ezekiel saw, when, by the vision led,"
+    },
+    {
+      "number": 456,
+      "text": "His eye surveyed the dark idolatries"
+    },
+    {
+      "number": 457,
+      "text": "Of alienated Judah. Next came one"
+    },
+    {
+      "number": 458,
+      "text": "Who mourned in earnest, when the captive ark"
+    },
+    {
+      "number": 459,
+      "text": "Maimed his brute image, head and hands lopt off,"
+    },
+    {
+      "number": 460,
+      "text": "In his own temple, on the grunsel-edge,"
+    },
+    {
+      "number": 461,
+      "text": "Where he fell flat and shamed his worshippers:"
+    },
+    {
+      "number": 462,
+      "text": "Dagon his name, sea-monster, upward man"
+    },
+    {
+      "number": 463,
+      "text": "And downward fish; yet had his temple high"
+    },
+    {
+      "number": 464,
+      "text": "Reared in Azotus, dreaded through the coast"
+    },
+    {
+      "number": 465,
+      "text": "Of Palestine, in Gath and Ascalon,"
+    },
+    {
+      "number": 466,
+      "text": "And Accaron and Gaza’s frontier bounds."
+    },
+    {
+      "number": 467,
+      "text": "Him followed Rimmon, whose delightful seat"
+    },
+    {
+      "number": 468,
+      "text": "Was fair Damascus, on the fertile banks"
+    },
+    {
+      "number": 469,
+      "text": "Of Abbana and Pharphar, lucid streams."
+    },
+    {
+      "number": 470,
+      "text": "He also against the house of God was bold:"
+    },
+    {
+      "number": 471,
+      "text": "A leper once he lost, and gained a king—"
+    },
+    {
+      "number": 472,
+      "text": "Ahaz, his sottish conqueror, whom he drew"
+    },
+    {
+      "number": 473,
+      "text": "God’s altar to disparage and displace"
+    },
+    {
+      "number": 474,
+      "text": "For one of Syrian mode, whereon to burn"
+    },
+    {
+      "number": 475,
+      "text": "His odious offerings, and adore the gods"
+    },
+    {
+      "number": 476,
+      "text": "Whom he had vanquished. After these appeared"
+    },
+    {
+      "number": 477,
+      "text": "A crew who, under names of old renown—"
+    },
+    {
+      "number": 478,
+      "text": "Osiris, Isis, Orus, and their train—"
+    },
+    {
+      "number": 479,
+      "text": "With monstrous shapes and sorceries abused"
+    },
+    {
+      "number": 480,
+      "text": "Fanatic Egypt and her priests to seek"
+    },
+    {
+      "number": 481,
+      "text": "Their wandering gods disguised in brutish forms"
+    },
+    {
+      "number": 482,
+      "text": "Rather than human. Nor did Israel scape"
+    },
+    {
+      "number": 483,
+      "text": "Th’ infection, when their borrowed gold composed"
+    },
+    {
+      "number": 484,
+      "text": "The calf in Oreb; and the rebel king"
+    },
+    {
+      "number": 485,
+      "text": "Doubled that sin in Bethel and in Dan,"
+    },
+    {
+      "number": 486,
+      "text": "Likening his Maker to the grazed ox—"
+    },
+    {
+      "number": 487,
+      "text": "Jehovah, who, in one night, when he passed"
+    },
+    {
+      "number": 488,
+      "text": "From Egypt marching, equalled with one stroke"
+    },
+    {
+      "number": 489,
+      "text": "Both her first-born and all her bleating gods."
+    },
+    {
+      "number": 490,
+      "text": "Belial came last; than whom a Spirit more lewd"
+    },
+    {
+      "number": 491,
+      "text": "Fell not from Heaven, or more gross to love"
+    },
+    {
+      "number": 492,
+      "text": "Vice for itself. To him no temple stood"
+    },
+    {
+      "number": 493,
+      "text": "Or altar smoked; yet who more oft than he"
+    },
+    {
+      "number": 494,
+      "text": "In temples and at altars, when the priest"
+    },
+    {
+      "number": 495,
+      "text": "Turns atheist, as did Eli’s sons, who filled"
+    },
+    {
+      "number": 496,
+      "text": "With lust and violence the house of God?"
+    },
+    {
+      "number": 497,
+      "text": "In courts and palaces he also reigns,"
+    },
+    {
+      "number": 498,
+      "text": "And in luxurious cities, where the noise"
+    },
+    {
+      "number": 499,
+      "text": "Of riot ascends above their loftiest towers,"
+    },
+    {
+      "number": 500,
+      "text": "And injury and outrage; and, when night"
+    },
+    {
+      "number": 501,
+      "text": "Darkens the streets, then wander forth the sons"
+    },
+    {
+      "number": 502,
+      "text": "Of Belial, flown with insolence and wine."
+    },
+    {
+      "number": 503,
+      "text": "Witness the streets of Sodom, and that night"
+    },
+    {
+      "number": 504,
+      "text": "In Gibeah, when the hospitable door"
+    },
+    {
+      "number": 505,
+      "text": "Exposed a matron, to avoid worse rape."
+    },
+    {
+      "number": 506,
+      "text": "These were the prime in order and in might:"
+    },
+    {
+      "number": 507,
+      "text": "The rest were long to tell; though far renowned"
+    },
+    {
+      "number": 508,
+      "text": "Th’ Ionian gods—of Javan’s issue held"
+    },
+    {
+      "number": 509,
+      "text": "Gods, yet confessed later than Heaven and Earth,"
+    },
+    {
+      "number": 510,
+      "text": "Their boasted parents;—Titan, Heaven’s first-born,"
+    },
+    {
+      "number": 511,
+      "text": "With his enormous brood, and birthright seized"
+    },
+    {
+      "number": 512,
+      "text": "By younger Saturn: he from mightier Jove,"
+    },
+    {
+      "number": 513,
+      "text": "His own and Rhea’s son, like measure found;"
+    },
+    {
+      "number": 514,
+      "text": "So Jove usurping reigned. These, first in Crete"
+    },
+    {
+      "number": 515,
+      "text": "And Ida known, thence on the snowy top"
+    },
+    {
+      "number": 516,
+      "text": "Of cold Olympus ruled the middle air,"
+    },
+    {
+      "number": 517,
+      "text": "Their highest heaven; or on the Delphian cliff,"
+    },
+    {
+      "number": 518,
+      "text": "Or in Dodona, and through all the bounds"
+    },
+    {
+      "number": 519,
+      "text": "Of Doric land; or who with Saturn old"
+    },
+    {
+      "number": 520,
+      "text": "Fled over Adria to th’ Hesperian fields,"
+    },
+    {
+      "number": 521,
+      "text": "And o’er the Celtic roamed the utmost Isles."
+    },
+    {
+      "number": 522,
+      "text": "All these and more came flocking; but with looks"
+    },
+    {
+      "number": 523,
+      "text": "Downcast and damp; yet such wherein appeared"
+    },
+    {
+      "number": 524,
+      "text": "Obscure some glimpse of joy to have found their Chief"
+    },
+    {
+      "number": 525,
+      "text": "Not in despair, to have found themselves not lost"
+    },
+    {
+      "number": 526,
+      "text": "In loss itself; which on his countenance cast"
+    },
+    {
+      "number": 527,
+      "text": "Like doubtful hue. But he, his wonted pride"
+    },
+    {
+      "number": 528,
+      "text": "Soon recollecting, with high words, that bore"
+    },
+    {
+      "number": 529,
+      "text": "Semblance of worth, not substance, gently raised"
+    },
+    {
+      "number": 530,
+      "text": "Their fainting courage, and dispelled their fears."
+    },
+    {
+      "number": 531,
+      "text": "Then straight commands that, at the warlike sound"
+    },
+    {
+      "number": 532,
+      "text": "Of trumpets loud and clarions, be upreared"
+    },
+    {
+      "number": 533,
+      "text": "His mighty standard. That proud honour claimed"
+    },
+    {
+      "number": 534,
+      "text": "Azazel as his right, a Cherub tall:"
+    },
+    {
+      "number": 535,
+      "text": "Who forthwith from the glittering staff unfurled"
+    },
+    {
+      "number": 536,
+      "text": "Th’ imperial ensign; which, full high advanced,"
+    },
+    {
+      "number": 537,
+      "text": "Shone like a meteor streaming to the wind,"
+    },
+    {
+      "number": 538,
+      "text": "With gems and golden lustre rich emblazed,"
+    },
+    {
+      "number": 539,
+      "text": "Seraphic arms and trophies; all the while"
+    },
+    {
+      "number": 540,
+      "text": "Sonorous metal blowing martial sounds:"
+    },
+    {
+      "number": 541,
+      "text": "At which the universal host up-sent"
+    },
+    {
+      "number": 542,
+      "text": "A shout that tore Hell’s concave, and beyond"
+    },
+    {
+      "number": 543,
+      "text": "Frighted the reign of Chaos and old Night."
+    },
+    {
+      "number": 544,
+      "text": "All in a moment through the gloom were seen"
+    },
+    {
+      "number": 545,
+      "text": "Ten thousand banners rise into the air,"
+    },
+    {
+      "number": 546,
+      "text": "With orient colours waving: with them rose"
+    },
+    {
+      "number": 547,
+      "text": "A forest huge of spears; and thronging helms"
+    },
+    {
+      "number": 548,
+      "text": "Appeared, and serried shields in thick array"
+    },
+    {
+      "number": 549,
+      "text": "Of depth immeasurable. Anon they move"
+    },
+    {
+      "number": 550,
+      "text": "In perfect phalanx to the Dorian mood"
+    },
+    {
+      "number": 551,
+      "text": "Of flutes and soft recorders—such as raised"
+    },
+    {
+      "number": 552,
+      "text": "To height of noblest temper heroes old"
+    },
+    {
+      "number": 553,
+      "text": "Arming to battle, and instead of rage"
+    },
+    {
+      "number": 554,
+      "text": "Deliberate valour breathed, firm, and unmoved"
+    },
+    {
+      "number": 555,
+      "text": "With dread of death to flight or foul retreat;"
+    },
+    {
+      "number": 556,
+      "text": "Nor wanting power to mitigate and swage"
+    },
+    {
+      "number": 557,
+      "text": "With solemn touches troubled thoughts, and chase"
+    },
+    {
+      "number": 558,
+      "text": "Anguish and doubt and fear and sorrow and pain"
+    },
+    {
+      "number": 559,
+      "text": "From mortal or immortal minds. Thus they,"
+    },
+    {
+      "number": 560,
+      "text": "Breathing united force with fixed thought,"
+    },
+    {
+      "number": 561,
+      "text": "Moved on in silence to soft pipes that charmed"
+    },
+    {
+      "number": 562,
+      "text": "Their painful steps o’er the burnt soil. And now"
+    },
+    {
+      "number": 563,
+      "text": "Advanced in view they stand—a horrid front"
+    },
+    {
+      "number": 564,
+      "text": "Of dreadful length and dazzling arms, in guise"
+    },
+    {
+      "number": 565,
+      "text": "Of warriors old, with ordered spear and shield,"
+    },
+    {
+      "number": 566,
+      "text": "Awaiting what command their mighty Chief"
+    },
+    {
+      "number": 567,
+      "text": "Had to impose. He through the armed files"
+    },
+    {
+      "number": 568,
+      "text": "Darts his experienced eye, and soon traverse"
+    },
+    {
+      "number": 569,
+      "text": "The whole battalion views—their order due,"
+    },
+    {
+      "number": 570,
+      "text": "Their visages and stature as of gods;"
+    },
+    {
+      "number": 571,
+      "text": "Their number last he sums. And now his heart"
+    },
+    {
+      "number": 572,
+      "text": "Distends with pride, and, hardening in his strength,"
+    },
+    {
+      "number": 573,
+      "text": "Glories: for never, since created Man,"
+    },
+    {
+      "number": 574,
+      "text": "Met such embodied force as, named with these,"
+    },
+    {
+      "number": 575,
+      "text": "Could merit more than that small infantry"
+    },
+    {
+      "number": 576,
+      "text": "Warred on by cranes—though all the giant brood"
+    },
+    {
+      "number": 577,
+      "text": "Of Phlegra with th’ heroic race were joined"
+    },
+    {
+      "number": 578,
+      "text": "That fought at Thebes and Ilium, on each side"
+    },
+    {
+      "number": 579,
+      "text": "Mixed with auxiliar gods; and what resounds"
+    },
+    {
+      "number": 580,
+      "text": "In fable or romance of Uther’s son,"
+    },
+    {
+      "number": 581,
+      "text": "Begirt with British and Armoric knights;"
+    },
+    {
+      "number": 582,
+      "text": "And all who since, baptized or infidel,"
+    },
+    {
+      "number": 583,
+      "text": "Jousted in Aspramont, or Montalban,"
+    },
+    {
+      "number": 584,
+      "text": "Damasco, or Marocco, or Trebisond,"
+    },
+    {
+      "number": 585,
+      "text": "Or whom Biserta sent from Afric shore"
+    },
+    {
+      "number": 586,
+      "text": "When Charlemain with all his peerage fell"
+    },
+    {
+      "number": 587,
+      "text": "By Fontarabbia. Thus far these beyond"
+    },
+    {
+      "number": 588,
+      "text": "Compare of mortal prowess, yet observed"
+    },
+    {
+      "number": 589,
+      "text": "Their dread Commander. He, above the rest"
+    },
+    {
+      "number": 590,
+      "text": "In shape and gesture proudly eminent,"
+    },
+    {
+      "number": 591,
+      "text": "Stood like a tower. His form had yet not lost"
+    },
+    {
+      "number": 592,
+      "text": "All her original brightness, nor appeared"
+    },
+    {
+      "number": 593,
+      "text": "Less than Archangel ruined, and th’ excess"
+    },
+    {
+      "number": 594,
+      "text": "Of glory obscured: as when the sun new-risen"
+    },
+    {
+      "number": 595,
+      "text": "Looks through the horizontal misty air"
+    },
+    {
+      "number": 596,
+      "text": "Shorn of his beams, or, from behind the moon,"
+    },
+    {
+      "number": 597,
+      "text": "In dim eclipse, disastrous twilight sheds"
+    },
+    {
+      "number": 598,
+      "text": "On half the nations, and with fear of change"
+    },
+    {
+      "number": 599,
+      "text": "Perplexes monarchs. Darkened so, yet shone"
+    },
+    {
+      "number": 600,
+      "text": "Above them all th’ Archangel: but his face"
+    },
+    {
+      "number": 601,
+      "text": "Deep scars of thunder had intrenched, and care"
+    },
+    {
+      "number": 602,
+      "text": "Sat on his faded cheek, but under brows"
+    },
+    {
+      "number": 603,
+      "text": "Of dauntless courage, and considerate pride"
+    },
+    {
+      "number": 604,
+      "text": "Waiting revenge. Cruel his eye, but cast"
+    },
+    {
+      "number": 605,
+      "text": "Signs of remorse and passion, to behold"
+    },
+    {
+      "number": 606,
+      "text": "The fellows of his crime, the followers rather"
+    },
+    {
+      "number": 607,
+      "text": "(Far other once beheld in bliss), condemned"
+    },
+    {
+      "number": 608,
+      "text": "For ever now to have their lot in pain—"
+    },
+    {
+      "number": 609,
+      "text": "Millions of Spirits for his fault amerced"
+    },
+    {
+      "number": 610,
+      "text": "Of Heaven, and from eternal splendours flung"
+    },
+    {
+      "number": 611,
+      "text": "For his revolt—yet faithful how they stood,"
+    },
+    {
+      "number": 612,
+      "text": "Their glory withered; as, when heaven’s fire"
+    },
+    {
+      "number": 613,
+      "text": "Hath scathed the forest oaks or mountain pines,"
+    },
+    {
+      "number": 614,
+      "text": "With singed top their stately growth, though bare,"
+    },
+    {
+      "number": 615,
+      "text": "Stands on the blasted heath. He now prepared"
+    },
+    {
+      "number": 616,
+      "text": "To speak; whereat their doubled ranks they bend"
+    },
+    {
+      "number": 617,
+      "text": "From wing to wing, and half enclose him round"
+    },
+    {
+      "number": 618,
+      "text": "With all his peers: attention held them mute."
+    },
+    {
+      "number": 619,
+      "text": "Thrice he assayed, and thrice, in spite of scorn,"
+    },
+    {
+      "number": 620,
+      "text": "Tears, such as Angels weep, burst forth: at last"
+    },
+    {
+      "number": 621,
+      "text": "Words interwove with sighs found out their way:—"
+    },
+    {
+      "number": 622,
+      "text": "“O myriads of immortal Spirits! O Powers"
+    },
+    {
+      "number": 623,
+      "text": "Matchless, but with th’ Almighty!—and that strife"
+    },
+    {
+      "number": 624,
+      "text": "Was not inglorious, though th’ event was dire,"
+    },
+    {
+      "number": 625,
+      "text": "As this place testifies, and this dire change,"
+    },
+    {
+      "number": 626,
+      "text": "Hateful to utter. But what power of mind,"
+    },
+    {
+      "number": 627,
+      "text": "Forseeing or presaging, from the depth"
+    },
+    {
+      "number": 628,
+      "text": "Of knowledge past or present, could have feared"
+    },
+    {
+      "number": 629,
+      "text": "How such united force of gods, how such"
+    },
+    {
+      "number": 630,
+      "text": "As stood like these, could ever know repulse?"
+    },
+    {
+      "number": 631,
+      "text": "For who can yet believe, though after loss,"
+    },
+    {
+      "number": 632,
+      "text": "That all these puissant legions, whose exile"
+    },
+    {
+      "number": 633,
+      "text": "Hath emptied Heaven, shall fail to re-ascend,"
+    },
+    {
+      "number": 634,
+      "text": "Self-raised, and repossess their native seat?"
+    },
+    {
+      "number": 635,
+      "text": "For me, be witness all the host of Heaven,"
+    },
+    {
+      "number": 636,
+      "text": "If counsels different, or danger shunned"
+    },
+    {
+      "number": 637,
+      "text": "By me, have lost our hopes. But he who reigns"
+    },
+    {
+      "number": 638,
+      "text": "Monarch in Heaven till then as one secure"
+    },
+    {
+      "number": 639,
+      "text": "Sat on his throne, upheld by old repute,"
+    },
+    {
+      "number": 640,
+      "text": "Consent or custom, and his regal state"
+    },
+    {
+      "number": 641,
+      "text": "Put forth at full, but still his strength concealed—"
+    },
+    {
+      "number": 642,
+      "text": "Which tempted our attempt, and wrought our fall."
+    },
+    {
+      "number": 643,
+      "text": "Henceforth his might we know, and know our own,"
+    },
+    {
+      "number": 644,
+      "text": "So as not either to provoke, or dread"
+    },
+    {
+      "number": 645,
+      "text": "New war provoked: our better part remains"
+    },
+    {
+      "number": 646,
+      "text": "To work in close design, by fraud or guile,"
+    },
+    {
+      "number": 647,
+      "text": "What force effected not; that he no less"
+    },
+    {
+      "number": 648,
+      "text": "At length from us may find, who overcomes"
+    },
+    {
+      "number": 649,
+      "text": "By force hath overcome but half his foe."
+    },
+    {
+      "number": 650,
+      "text": "Space may produce new Worlds; whereof so rife"
+    },
+    {
+      "number": 651,
+      "text": "There went a fame in Heaven that he ere long"
+    },
+    {
+      "number": 652,
+      "text": "Intended to create, and therein plant"
+    },
+    {
+      "number": 653,
+      "text": "A generation whom his choice regard"
+    },
+    {
+      "number": 654,
+      "text": "Should favour equal to the Sons of Heaven."
+    },
+    {
+      "number": 655,
+      "text": "Thither, if but to pry, shall be perhaps"
+    },
+    {
+      "number": 656,
+      "text": "Our first eruption—thither, or elsewhere;"
+    },
+    {
+      "number": 657,
+      "text": "For this infernal pit shall never hold"
+    },
+    {
+      "number": 658,
+      "text": "Celestial Spirits in bondage, nor th’ Abyss"
+    },
+    {
+      "number": 659,
+      "text": "Long under darkness cover. But these thoughts"
+    },
+    {
+      "number": 660,
+      "text": "Full counsel must mature. Peace is despaired;"
+    },
+    {
+      "number": 661,
+      "text": "For who can think submission? War, then, war"
+    },
+    {
+      "number": 662,
+      "text": "Open or understood, must be resolved.”"
+    },
+    {
+      "number": 663,
+      "text": "He spake; and, to confirm his words, outflew"
+    },
+    {
+      "number": 664,
+      "text": "Millions of flaming swords, drawn from the thighs"
+    },
+    {
+      "number": 665,
+      "text": "Of mighty Cherubim; the sudden blaze"
+    },
+    {
+      "number": 666,
+      "text": "Far round illumined Hell. Highly they raged"
+    },
+    {
+      "number": 667,
+      "text": "Against the Highest, and fierce with grasped arms"
+    },
+    {
+      "number": 668,
+      "text": "Clashed on their sounding shields the din of war,"
+    },
+    {
+      "number": 669,
+      "text": "Hurling defiance toward the vault of Heaven."
+    },
+    {
+      "number": 670,
+      "text": "There stood a hill not far, whose grisly top"
+    },
+    {
+      "number": 671,
+      "text": "Belched fire and rolling smoke; the rest entire"
+    },
+    {
+      "number": 672,
+      "text": "Shone with a glossy scurf—undoubted sign"
+    },
+    {
+      "number": 673,
+      "text": "That in his womb was hid metallic ore,"
+    },
+    {
+      "number": 674,
+      "text": "The work of sulphur. Thither, winged with speed,"
+    },
+    {
+      "number": 675,
+      "text": "A numerous brigade hastened: as when bands"
+    },
+    {
+      "number": 676,
+      "text": "Of pioneers, with spade and pickaxe armed,"
+    },
+    {
+      "number": 677,
+      "text": "Forerun the royal camp, to trench a field,"
+    },
+    {
+      "number": 678,
+      "text": "Or cast a rampart. Mammon led them on—"
+    },
+    {
+      "number": 679,
+      "text": "Mammon, the least erected Spirit that fell"
+    },
+    {
+      "number": 680,
+      "text": "From Heaven; for even in Heaven his looks and thoughts"
+    },
+    {
+      "number": 681,
+      "text": "Were always downward bent, admiring more"
+    },
+    {
+      "number": 682,
+      "text": "The riches of heaven’s pavement, trodden gold,"
+    },
+    {
+      "number": 683,
+      "text": "Than aught divine or holy else enjoyed"
+    },
+    {
+      "number": 684,
+      "text": "In vision beatific. By him first"
+    },
+    {
+      "number": 685,
+      "text": "Men also, and by his suggestion taught,"
+    },
+    {
+      "number": 686,
+      "text": "Ransacked the centre, and with impious hands"
+    },
+    {
+      "number": 687,
+      "text": "Rifled the bowels of their mother Earth"
+    },
+    {
+      "number": 688,
+      "text": "For treasures better hid. Soon had his crew"
+    },
+    {
+      "number": 689,
+      "text": "Opened into the hill a spacious wound,"
+    },
+    {
+      "number": 690,
+      "text": "And digged out ribs of gold. Let none admire"
+    },
+    {
+      "number": 691,
+      "text": "That riches grow in Hell; that soil may best"
+    },
+    {
+      "number": 692,
+      "text": "Deserve the precious bane. And here let those"
+    },
+    {
+      "number": 693,
+      "text": "Who boast in mortal things, and wondering tell"
+    },
+    {
+      "number": 694,
+      "text": "Of Babel, and the works of Memphian kings,"
+    },
+    {
+      "number": 695,
+      "text": "Learn how their greatest monuments of fame"
+    },
+    {
+      "number": 696,
+      "text": "And strength, and art, are easily outdone"
+    },
+    {
+      "number": 697,
+      "text": "By Spirits reprobate, and in an hour"
+    },
+    {
+      "number": 698,
+      "text": "What in an age they, with incessant toil"
+    },
+    {
+      "number": 699,
+      "text": "And hands innumerable, scarce perform."
+    },
+    {
+      "number": 700,
+      "text": "Nigh on the plain, in many cells prepared,"
+    },
+    {
+      "number": 701,
+      "text": "That underneath had veins of liquid fire"
+    },
+    {
+      "number": 702,
+      "text": "Sluiced from the lake, a second multitude"
+    },
+    {
+      "number": 703,
+      "text": "With wondrous art founded the massy ore,"
+    },
+    {
+      "number": 704,
+      "text": "Severing each kind, and scummed the bullion-dross."
+    },
+    {
+      "number": 705,
+      "text": "A third as soon had formed within the ground"
+    },
+    {
+      "number": 706,
+      "text": "A various mould, and from the boiling cells"
+    },
+    {
+      "number": 707,
+      "text": "By strange conveyance filled each hollow nook;"
+    },
+    {
+      "number": 708,
+      "text": "As in an organ, from one blast of wind,"
+    },
+    {
+      "number": 709,
+      "text": "To many a row of pipes the sound-board breathes."
+    },
+    {
+      "number": 710,
+      "text": "Anon out of the earth a fabric huge"
+    },
+    {
+      "number": 711,
+      "text": "Rose like an exhalation, with the sound"
+    },
+    {
+      "number": 712,
+      "text": "Of dulcet symphonies and voices sweet—"
+    },
+    {
+      "number": 713,
+      "text": "Built like a temple, where pilasters round"
+    },
+    {
+      "number": 714,
+      "text": "Were set, and Doric pillars overlaid"
+    },
+    {
+      "number": 715,
+      "text": "With golden architrave; nor did there want"
+    },
+    {
+      "number": 716,
+      "text": "Cornice or frieze, with bossy sculptures graven;"
+    },
+    {
+      "number": 717,
+      "text": "The roof was fretted gold. Not Babylon"
+    },
+    {
+      "number": 718,
+      "text": "Nor great Alcairo such magnificence"
+    },
+    {
+      "number": 719,
+      "text": "Equalled in all their glories, to enshrine"
+    },
+    {
+      "number": 720,
+      "text": "Belus or Serapis their gods, or seat"
+    },
+    {
+      "number": 721,
+      "text": "Their kings, when Egypt with Assyria strove"
+    },
+    {
+      "number": 722,
+      "text": "In wealth and luxury. Th’ ascending pile"
+    },
+    {
+      "number": 723,
+      "text": "Stood fixed her stately height, and straight the doors,"
+    },
+    {
+      "number": 724,
+      "text": "Opening their brazen folds, discover, wide"
+    },
+    {
+      "number": 725,
+      "text": "Within, her ample spaces o’er the smooth"
+    },
+    {
+      "number": 726,
+      "text": "And level pavement: from the arched roof,"
+    },
+    {
+      "number": 727,
+      "text": "Pendent by subtle magic, many a row"
+    },
+    {
+      "number": 728,
+      "text": "Of starry lamps and blazing cressets, fed"
+    },
+    {
+      "number": 729,
+      "text": "With naptha and asphaltus, yielded light"
+    },
+    {
+      "number": 730,
+      "text": "As from a sky. The hasty multitude"
+    },
+    {
+      "number": 731,
+      "text": "Admiring entered; and the work some praise,"
+    },
+    {
+      "number": 732,
+      "text": "And some the architect. His hand was known"
+    },
+    {
+      "number": 733,
+      "text": "In Heaven by many a towered structure high,"
+    },
+    {
+      "number": 734,
+      "text": "Where sceptred Angels held their residence,"
+    },
+    {
+      "number": 735,
+      "text": "And sat as Princes, whom the supreme King"
+    },
+    {
+      "number": 736,
+      "text": "Exalted to such power, and gave to rule,"
+    },
+    {
+      "number": 737,
+      "text": "Each in his Hierarchy, the Orders bright."
+    },
+    {
+      "number": 738,
+      "text": "Nor was his name unheard or unadored"
+    },
+    {
+      "number": 739,
+      "text": "In ancient Greece; and in Ausonian land"
+    },
+    {
+      "number": 740,
+      "text": "Men called him Mulciber; and how he fell"
+    },
+    {
+      "number": 741,
+      "text": "From Heaven they fabled, thrown by angry Jove"
+    },
+    {
+      "number": 742,
+      "text": "Sheer o’er the crystal battlements: from morn"
+    },
+    {
+      "number": 743,
+      "text": "To noon he fell, from noon to dewy eve,"
+    },
+    {
+      "number": 744,
+      "text": "A summer’s day, and with the setting sun"
+    },
+    {
+      "number": 745,
+      "text": "Dropt from the zenith, like a falling star,"
+    },
+    {
+      "number": 746,
+      "text": "On Lemnos, th’ Aegaean isle. Thus they relate,"
+    },
+    {
+      "number": 747,
+      "text": "Erring; for he with this rebellious rout"
+    },
+    {
+      "number": 748,
+      "text": "Fell long before; nor aught availed him now"
+    },
+    {
+      "number": 749,
+      "text": "To have built in Heaven high towers; nor did he scape"
+    },
+    {
+      "number": 750,
+      "text": "By all his engines, but was headlong sent,"
+    },
+    {
+      "number": 751,
+      "text": "With his industrious crew, to build in Hell."
+    },
+    {
+      "number": 752,
+      "text": "Meanwhile the winged Heralds, by command"
+    },
+    {
+      "number": 753,
+      "text": "Of sovereign power, with awful ceremony"
+    },
+    {
+      "number": 754,
+      "text": "And trumpet’s sound, throughout the host proclaim"
+    },
+    {
+      "number": 755,
+      "text": "A solemn council forthwith to be held"
+    },
+    {
+      "number": 756,
+      "text": "At Pandemonium, the high capital"
+    },
+    {
+      "number": 757,
+      "text": "Of Satan and his peers. Their summons called"
+    },
+    {
+      "number": 758,
+      "text": "From every band and squared regiment"
+    },
+    {
+      "number": 759,
+      "text": "By place or choice the worthiest: they anon"
+    },
+    {
+      "number": 760,
+      "text": "With hundreds and with thousands trooping came"
+    },
+    {
+      "number": 761,
+      "text": "Attended. All access was thronged; the gates"
+    },
+    {
+      "number": 762,
+      "text": "And porches wide, but chief the spacious hall"
+    },
+    {
+      "number": 763,
+      "text": "(Though like a covered field, where champions bold"
+    },
+    {
+      "number": 764,
+      "text": "Wont ride in armed, and at the Soldan’s chair"
+    },
+    {
+      "number": 765,
+      "text": "Defied the best of Paynim chivalry"
+    },
+    {
+      "number": 766,
+      "text": "To mortal combat, or career with lance),"
+    },
+    {
+      "number": 767,
+      "text": "Thick swarmed, both on the ground and in the air,"
+    },
+    {
+      "number": 768,
+      "text": "Brushed with the hiss of rustling wings. As bees"
+    },
+    {
+      "number": 769,
+      "text": "In spring-time, when the Sun with Taurus rides."
+    },
+    {
+      "number": 770,
+      "text": "Pour forth their populous youth about the hive"
+    },
+    {
+      "number": 771,
+      "text": "In clusters; they among fresh dews and flowers"
+    },
+    {
+      "number": 772,
+      "text": "Fly to and fro, or on the smoothed plank,"
+    },
+    {
+      "number": 773,
+      "text": "The suburb of their straw-built citadel,"
+    },
+    {
+      "number": 774,
+      "text": "New rubbed with balm, expatiate, and confer"
+    },
+    {
+      "number": 775,
+      "text": "Their state-affairs: so thick the airy crowd"
+    },
+    {
+      "number": 776,
+      "text": "Swarmed and were straitened; till, the signal given,"
+    },
+    {
+      "number": 777,
+      "text": "Behold a wonder! They but now who seemed"
+    },
+    {
+      "number": 778,
+      "text": "In bigness to surpass Earth’s giant sons,"
+    },
+    {
+      "number": 779,
+      "text": "Now less than smallest dwarfs, in narrow room"
+    },
+    {
+      "number": 780,
+      "text": "Throng numberless—like that pygmean race"
+    },
+    {
+      "number": 781,
+      "text": "Beyond the Indian mount; or faery elves,"
+    },
+    {
+      "number": 782,
+      "text": "Whose midnight revels, by a forest-side"
+    },
+    {
+      "number": 783,
+      "text": "Or fountain, some belated peasant sees,"
+    },
+    {
+      "number": 784,
+      "text": "Or dreams he sees, while overhead the Moon"
+    },
+    {
+      "number": 785,
+      "text": "Sits arbitress, and nearer to the Earth"
+    },
+    {
+      "number": 786,
+      "text": "Wheels her pale course: they, on their mirth and dance"
+    },
+    {
+      "number": 787,
+      "text": "Intent, with jocund music charm his ear;"
+    },
+    {
+      "number": 788,
+      "text": "At once with joy and fear his heart rebounds."
+    },
+    {
+      "number": 789,
+      "text": "Thus incorporeal Spirits to smallest forms"
+    },
+    {
+      "number": 790,
+      "text": "Reduced their shapes immense, and were at large,"
+    },
+    {
+      "number": 791,
+      "text": "Though without number still, amidst the hall"
+    },
+    {
+      "number": 792,
+      "text": "Of that infernal court. But far within,"
+    },
+    {
+      "number": 793,
+      "text": "And in their own dimensions like themselves,"
+    },
+    {
+      "number": 794,
+      "text": "The great Seraphic Lords and Cherubim"
+    },
+    {
+      "number": 795,
+      "text": "In close recess and secret conclave sat,"
+    },
+    {
+      "number": 796,
+      "text": "A thousand demi-gods on golden seats,"
+    },
+    {
+      "number": 797,
+      "text": "Frequent and full. After short silence then,"
+    },
+    {
+      "number": 798,
+      "text": "And summons read, the great consult began."
+    }
+  ]
+}
