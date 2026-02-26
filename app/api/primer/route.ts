@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const cacheKey = `primer:${level}`;
+  const cacheKey = `primer:${level}:v2`;
   const supabase = createSupabaseServerClient();
 
   // Check cache

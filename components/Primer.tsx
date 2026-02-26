@@ -11,6 +11,20 @@ interface PrimerProps {
 
 // Markdown component overrides — enforce the app's typography, no browser defaults
 const mdComponents: Components = {
+  h3: ({ children }) => (
+    <h3
+      style={{
+        fontFamily: "var(--font-cormorant), Georgia, 'Times New Roman', serif",
+        fontSize: "22px",
+        lineHeight: 1.3,
+        color: "#d5c089",
+        margin: "0 0 0.7em",
+        fontWeight: 500,
+      }}
+    >
+      {children}
+    </h3>
+  ),
   p: ({ children }) => (
     <p
       style={{
@@ -30,6 +44,39 @@ const mdComponents: Components = {
   ),
   em: ({ children }) => (
     <em style={{ fontStyle: "italic", color: "inherit" }}>{children}</em>
+  ),
+  ul: ({ children }) => (
+    <ul
+      style={{
+        margin: "0 0 1.1em 1.25em",
+        padding: 0,
+        color: "#f0ebe2",
+      }}
+    >
+      {children}
+    </ul>
+  ),
+  li: ({ children }) => (
+    <li
+      style={{
+        fontFamily: "var(--font-lora), Georgia, 'Times New Roman', serif",
+        fontSize: "16px",
+        lineHeight: 1.75,
+        marginBottom: "0.4em",
+      }}
+    >
+      {children}
+    </li>
+  ),
+  hr: () => (
+    <hr
+      style={{
+        border: 0,
+        height: "1px",
+        background: "linear-gradient(to right, #2a2820, transparent)",
+        margin: "1.4em 0",
+      }}
+    />
   ),
 };
 

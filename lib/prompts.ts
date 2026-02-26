@@ -93,6 +93,12 @@ Write a spoiler-free primer for Book I (~300 words). Cover:
 
 Reader level: ${KNOWLEDGE_LEVEL_LABELS[level]}. ${ANNOTATION_LEVEL_CALIBRATION[level]}
 
+Formatting for readability:
+- Use light markdown with short paragraphs.
+- Bold 3-5 key phrases using **bold**.
+- You may include one brief markdown heading (###) if it helps orientation.
+- Do not use long bullet lists.
+
 Make it punchy and alive — not a textbook introduction. The last sentence should make the reader want to turn the page immediately.`;
 }
 
