@@ -7,7 +7,6 @@ import KnowledgeToggle from "./KnowledgeToggle";
 import Reader from "./Reader";
 import FlipReader from "./FlipReader";
 import AnnotationCard from "./AnnotationCard";
-import Primer from "./Primer";
 import Chat from "./Chat";
 import ProgressBar from "./ProgressBar";
 import AnnotationHistory from "./AnnotationHistory";
@@ -155,8 +154,6 @@ export default function ReadingContainer() {
           Flip
         </button>
       </div>
-
-      <Primer level={level} />
 
       {readMode === "scroll" ? (
         <Reader

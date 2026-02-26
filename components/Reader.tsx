@@ -6,6 +6,7 @@ import type { KnowledgeLevel } from "@/lib/prompts";
 import { BOOK_1_SECTIONS } from "@/lib/sections";
 import type { Achievement } from "@/lib/types";
 import SectionCard from "./SectionCard";
+import Primer from "./Primer";
 
 interface ReaderProps {
   level: KnowledgeLevel;
@@ -63,6 +64,9 @@ function getLineRangeFromSelection(
   return { start: Math.min(...covered), end: Math.max(...covered) };
 }
 
+// Total pages: 0 = "Before You Begin" primer, 1–6 = sections
+const TOTAL_PAGES = 1 + BOOK_1_SECTIONS.length;
+
 export default function Reader({
   level,
   activeLines,
@@ -73,7 +77,7 @@ export default function Reader({
   onSectionVisible,
 }: ReaderProps) {
   const { lines } = book1;
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   const [trigger, setTrigger] = useState<TriggerState | null>(null);
   const [vocabByLine, setVocabByLine] = useState<Map<number, Map<string, VocabCard>>>(
     new Map()
@@ -81,11 +85,16 @@ export default function Reader({
   const [hoveredVocab, setHoveredVocab] = useState<VocabHoverState | null>(null);
   const articleRef = useRef<HTMLElement>(null);
 
-  // Fire onSectionVisible immediately when section changes (pagination-aware)
+  const isPrimerPage = currentPage === 0;
+  const currentSection = isPrimerPage ? null : BOOK_1_SECTIONS[currentPage - 1];
+
+  // Fire onSectionVisible immediately on section page change
   useEffect(() => {
-    onSectionVisible(BOOK_1_SECTIONS[currentSectionIndex].id);
+    if (!isPrimerPage && currentSection) {
+      onSectionVisible(currentSection.id);
+    }
     window.scrollTo({ top: 0 });
-  }, [currentSectionIndex, onSectionVisible]);
+  }, [currentPage]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     let cancelled = false;
@@ -186,10 +195,14 @@ export default function Reader({
     window.getSelection()?.removeAllRanges();
   }
 
-  const currentSection = BOOK_1_SECTIONS[currentSectionIndex];
-  const currentSectionLines = lines.filter(
-    (l) => l.number >= currentSection.lineStart && l.number <= currentSection.lineEnd
-  );
+  const currentSectionLines = currentSection
+    ? lines.filter(
+        (l) => l.number >= currentSection.lineStart && l.number <= currentSection.lineEnd
+      )
+    : [];
+
+  const isFirstPage = currentPage === 0;
+  const isLastPage = currentPage === TOTAL_PAGES - 1;
 
   return (
     <>
@@ -202,112 +215,118 @@ export default function Reader({
           fontFamily: "var(--font-lora), Georgia, 'Times New Roman', serif",
         }}
       >
-        <React.Fragment key={currentSection.id}>
-          <SectionCard
-            cardType="before"
-            section={currentSection}
-            level={level}
-            onSectionVisible={onSectionVisible}
-          />
-          {currentSectionLines.map((line) => {
-            const showNumber = line.number % 5 === 0 || line.number === 1;
-            const isActive =
-              activeLines !== null &&
-              line.number >= activeLines.start &&
-              line.number <= activeLines.end;
+        {isPrimerPage ? (
+          <Primer level={level} />
+        ) : (
+          currentSection && (
+            <React.Fragment key={currentSection.id}>
+              <SectionCard
+                cardType="before"
+                section={currentSection}
+                level={level}
+                onSectionVisible={onSectionVisible}
+              />
+              {currentSectionLines.map((line) => {
+                const showNumber = line.number % 5 === 0 || line.number === 1;
+                const isActive =
+                  activeLines !== null &&
+                  line.number >= activeLines.start &&
+                  line.number <= activeLines.end;
 
-            return (
-              <div
-                key={line.number}
-                style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  lineHeight: "1.85",
-                  minHeight: "1.85em",
-                  marginLeft: "-6px",
-                  paddingLeft: "6px",
-                  paddingRight: "6px",
-                  borderRadius: "3px",
-                  background: isActive
-                    ? "rgba(201, 168, 76, 0.07)"
-                    : "transparent",
-                  transition: "background 0.3s ease",
-                }}
-              >
-                {/* Line number */}
-                <span
-                  style={{
-                    display: "inline-block",
-                    width: "48px",
-                    minWidth: "48px",
-                    textAlign: "right",
-                    paddingRight: "20px",
-                    fontFamily:
-                      "var(--font-cormorant), Georgia, 'Times New Roman', serif",
-                    fontSize: "12px",
-                    color: showNumber ? "#4a4540" : "transparent",
-                    userSelect: "none",
-                    flexShrink: 0,
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  {line.number}
-                </span>
+                return (
+                  <div
+                    key={line.number}
+                    style={{
+                      display: "flex",
+                      alignItems: "baseline",
+                      lineHeight: "1.85",
+                      minHeight: "1.85em",
+                      marginLeft: "-6px",
+                      paddingLeft: "6px",
+                      paddingRight: "6px",
+                      borderRadius: "3px",
+                      background: isActive
+                        ? "rgba(201, 168, 76, 0.07)"
+                        : "transparent",
+                      transition: "background 0.3s ease",
+                    }}
+                  >
+                    {/* Line number */}
+                    <span
+                      style={{
+                        display: "inline-block",
+                        width: "48px",
+                        minWidth: "48px",
+                        textAlign: "right",
+                        paddingRight: "20px",
+                        fontFamily:
+                          "var(--font-cormorant), Georgia, 'Times New Roman', serif",
+                        fontSize: "12px",
+                        color: showNumber ? "#4a4540" : "transparent",
+                        userSelect: "none",
+                        flexShrink: 0,
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      {line.number}
+                    </span>
 
-                {/* Poem text */}
-                <span
-                  data-line={line.number}
-                  style={{
-                    fontSize: "18px",
-                    color: isActive ? "#f8f4ec" : "#f0ebe2",
-                    letterSpacing: "0.01em",
-                    cursor: "text",
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  {(line.text.match(/(\s+|[^\s]+)/g) ?? [line.text]).map(
-                    (token, index) => {
-                      if (/^\s+$/.test(token)) return token;
-                      const vocab = vocabByLine
-                        .get(line.number)
-                        ?.get(normalizeWord(token));
-                      if (!vocab) return token;
+                    {/* Poem text */}
+                    <span
+                      data-line={line.number}
+                      style={{
+                        fontSize: "18px",
+                        color: isActive ? "#f8f4ec" : "#f0ebe2",
+                        letterSpacing: "0.01em",
+                        cursor: "text",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      {(line.text.match(/(\s+|[^\s]+)/g) ?? [line.text]).map(
+                        (token, index) => {
+                          if (/^\s+$/.test(token)) return token;
+                          const vocab = vocabByLine
+                            .get(line.number)
+                            ?.get(normalizeWord(token));
+                          if (!vocab) return token;
 
-                      return (
-                        <span
-                          key={`${line.number}-${index}`}
-                          className="vocab-hover-word"
-                          onMouseEnter={(event) => {
-                            const rect = (
-                              event.currentTarget as HTMLSpanElement
-                            ).getBoundingClientRect();
-                            setHoveredVocab({
-                              card: vocab,
-                              viewportX: rect.left + rect.width / 2,
-                              viewportY: rect.top,
-                            });
-                          }}
-                          onMouseLeave={() => setHoveredVocab(null)}
-                        >
-                          {token}
-                        </span>
-                      );
-                    }
-                  )}
-                </span>
-              </div>
-            );
-          })}
-          <SectionCard
-            cardType="after"
-            section={currentSection}
-            level={level}
-            isCompleted={completedSections.has(currentSection.id)}
-            onComplete={(achievements) =>
-              onSectionComplete(currentSection.id, achievements)
-            }
-          />
-        </React.Fragment>
+                          return (
+                            <span
+                              key={`${line.number}-${index}`}
+                              className="vocab-hover-word"
+                              onMouseEnter={(event) => {
+                                const rect = (
+                                  event.currentTarget as HTMLSpanElement
+                                ).getBoundingClientRect();
+                                setHoveredVocab({
+                                  card: vocab,
+                                  viewportX: rect.left + rect.width / 2,
+                                  viewportY: rect.top,
+                                });
+                              }}
+                              onMouseLeave={() => setHoveredVocab(null)}
+                            >
+                              {token}
+                            </span>
+                          );
+                        }
+                      )}
+                    </span>
+                  </div>
+                );
+              })}
+              <SectionCard
+                cardType="after"
+                section={currentSection}
+                level={level}
+                isCompleted={completedSections.has(currentSection.id)}
+                onComplete={(achievements) =>
+                  onSectionComplete(currentSection.id, achievements)
+                }
+              />
+            </React.Fragment>
+          )
+        )}
       </article>
 
       {/* Pagination navigation */}
@@ -321,13 +340,13 @@ export default function Reader({
         }}
       >
         <button
-          onClick={() => setCurrentSectionIndex((i) => Math.max(0, i - 1))}
-          disabled={currentSectionIndex === 0}
+          onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
+          disabled={isFirstPage}
           style={{
             background: "transparent",
             border: "none",
-            cursor: currentSectionIndex === 0 ? "default" : "pointer",
-            color: currentSectionIndex === 0 ? "#2a2820" : "#8a847a",
+            cursor: isFirstPage ? "default" : "pointer",
+            color: isFirstPage ? "#2a2820" : "#8a847a",
             fontFamily: "var(--font-cormorant), Georgia, serif",
             fontSize: "16px",
             letterSpacing: "0.04em",
@@ -335,59 +354,69 @@ export default function Reader({
             transition: "color 0.15s ease",
           }}
           onMouseEnter={(e) => {
-            if (currentSectionIndex > 0)
+            if (!isFirstPage)
               (e.currentTarget as HTMLButtonElement).style.color = "#f0ebe2";
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color =
-              currentSectionIndex === 0 ? "#2a2820" : "#8a847a";
+            (e.currentTarget as HTMLButtonElement).style.color = isFirstPage
+              ? "#2a2820"
+              : "#8a847a";
           }}
         >
           ← Prev
         </button>
 
-        {/* Section dots */}
+        {/* Dots: primer + 6 sections */}
         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-          {BOOK_1_SECTIONS.map((section, i) => (
-            <button
-              key={section.id}
-              onClick={() => setCurrentSectionIndex(i)}
-              title={section.title}
-              style={{
-                width: i === currentSectionIndex ? "10px" : "7px",
-                height: i === currentSectionIndex ? "10px" : "7px",
-                borderRadius: "50%",
-                background: i === currentSectionIndex ? "#c9a84c" : "#2a2820",
-                border:
-                  i === currentSectionIndex
-                    ? "none"
-                    : "1px solid #3a3830",
-                cursor: "pointer",
-                padding: 0,
-                transition: "all 0.2s ease",
-              }}
-            />
-          ))}
+          {/* Primer dot — diamond shape via border-radius */}
+          <button
+            onClick={() => setCurrentPage(0)}
+            title="Before You Begin"
+            style={{
+              width: currentPage === 0 ? "10px" : "7px",
+              height: currentPage === 0 ? "10px" : "7px",
+              borderRadius: "2px",
+              transform: "rotate(45deg)",
+              background: currentPage === 0 ? "#c9a84c" : "#2a2820",
+              border: currentPage === 0 ? "none" : "1px solid #3a3830",
+              cursor: "pointer",
+              padding: 0,
+              transition: "all 0.2s ease",
+            }}
+          />
+
+          {/* Section dots */}
+          {BOOK_1_SECTIONS.map((section, i) => {
+            const pageIndex = i + 1;
+            return (
+              <button
+                key={section.id}
+                onClick={() => setCurrentPage(pageIndex)}
+                title={section.title}
+                style={{
+                  width: currentPage === pageIndex ? "10px" : "7px",
+                  height: currentPage === pageIndex ? "10px" : "7px",
+                  borderRadius: "50%",
+                  background: currentPage === pageIndex ? "#c9a84c" : "#2a2820",
+                  border:
+                    currentPage === pageIndex ? "none" : "1px solid #3a3830",
+                  cursor: "pointer",
+                  padding: 0,
+                  transition: "all 0.2s ease",
+                }}
+              />
+            );
+          })}
         </div>
 
         <button
-          onClick={() =>
-            setCurrentSectionIndex((i) =>
-              Math.min(BOOK_1_SECTIONS.length - 1, i + 1)
-            )
-          }
-          disabled={currentSectionIndex === BOOK_1_SECTIONS.length - 1}
+          onClick={() => setCurrentPage((p) => Math.min(TOTAL_PAGES - 1, p + 1))}
+          disabled={isLastPage}
           style={{
             background: "transparent",
             border: "none",
-            cursor:
-              currentSectionIndex === BOOK_1_SECTIONS.length - 1
-                ? "default"
-                : "pointer",
-            color:
-              currentSectionIndex === BOOK_1_SECTIONS.length - 1
-                ? "#2a2820"
-                : "#8a847a",
+            cursor: isLastPage ? "default" : "pointer",
+            color: isLastPage ? "#2a2820" : "#8a847a",
             fontFamily: "var(--font-cormorant), Georgia, serif",
             fontSize: "16px",
             letterSpacing: "0.04em",
@@ -395,14 +424,13 @@ export default function Reader({
             transition: "color 0.15s ease",
           }}
           onMouseEnter={(e) => {
-            if (currentSectionIndex < BOOK_1_SECTIONS.length - 1)
+            if (!isLastPage)
               (e.currentTarget as HTMLButtonElement).style.color = "#f0ebe2";
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color =
-              currentSectionIndex === BOOK_1_SECTIONS.length - 1
-                ? "#2a2820"
-                : "#8a847a";
+            (e.currentTarget as HTMLButtonElement).style.color = isLastPage
+              ? "#2a2820"
+              : "#8a847a";
           }}
         >
           Next →
