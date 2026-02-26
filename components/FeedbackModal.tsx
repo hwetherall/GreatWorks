@@ -104,8 +104,9 @@ export default function FeedbackModal() {
         aria-label="Leave feedback"
         style={{
           position: "fixed",
-          bottom: "68px",
+          bottom: "76px",
           left: "24px",
+          width: "156px",
           zIndex: 35,
           background: "#1c1b18",
           border: "1px solid #2a2820",
@@ -118,6 +119,9 @@ export default function FeedbackModal() {
           letterSpacing: "0.04em",
           boxShadow: "0 2px 12px rgba(0,0,0,0.4)",
           transition: "border-color 0.2s ease, color 0.2s ease",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {

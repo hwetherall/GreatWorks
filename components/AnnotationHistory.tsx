@@ -97,6 +97,7 @@ export default function AnnotationHistory({
           position: "fixed",
           bottom: "24px",
           left: "24px",
+          width: "156px",
           zIndex: 35,
           background: "#1c1b18",
           border: "1px solid #2a2820",
@@ -112,6 +113,7 @@ export default function AnnotationHistory({
           transition: "border-color 0.2s ease, color 0.2s ease",
           display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",
           gap: "8px",
           whiteSpace: "nowrap",
         }}
