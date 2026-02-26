@@ -1,5 +1,10 @@
 import { NextRequest } from "next/server";
-import { KnowledgeLevel, KNOWLEDGE_LEVELS, KNOWLEDGE_LEVEL_LABELS } from "@/lib/prompts";
+import {
+  KnowledgeLevel,
+  KNOWLEDGE_LEVELS,
+  KNOWLEDGE_LEVEL_LABELS,
+  getSectionCardFormattingPrompt,
+} from "@/lib/prompts";
 import { BOOK_1_SECTIONS } from "@/lib/sections";
 import { createSupabaseServerClient } from "@/lib/supabase";
 import { cachedContentStream, withCaching } from "@/lib/card-cache";
@@ -39,7 +44,7 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: "Section not found" }, { status: 400 });
   }
 
-  const cacheKey = `section:${sectionId}:${cardType}:${level}`;
+  const cacheKey = `section:${sectionId}:${cardType}:${level}:v2`;
   const supabase = createSupabaseServerClient();
 
   // Check cache first
@@ -62,11 +67,14 @@ export async function POST(request: NextRequest) {
   // Cache miss — generate and cache while streaming
   const rawPrompt = cardType === "before" ? section.beforePrompt : section.afterPrompt;
   let resolvedPrompt = rawPrompt.replace("[LEVEL]", KNOWLEDGE_LEVEL_LABELS[level]);
+  const formattingPrompt = getSectionCardFormattingPrompt(cardType);
 
   if (cardType === "after") {
     resolvedPrompt =
-      `Your response must open with one plain sentence — no more — that states the narrative fact: what just happened in this section, where we now are in the poem. Then continue with your insight as instructed.\n\n` +
+      `Your response must open with one plain sentence — no more — that states the narrative fact: what just happened in this section, where we now are in the poem. Then continue with your insight as instructed.\n\n${formattingPrompt}\n\n` +
       resolvedPrompt;
+  } else {
+    resolvedPrompt = `${formattingPrompt}\n\n${resolvedPrompt}`;
   }
 
   let upstream: Response;

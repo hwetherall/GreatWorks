@@ -96,6 +96,25 @@ Reader level: ${KNOWLEDGE_LEVEL_LABELS[level]}. ${ANNOTATION_LEVEL_CALIBRATION[l
 Make it punchy and alive — not a textbook introduction. The last sentence should make the reader want to turn the page immediately.`;
 }
 
+// ── Section cards ─────────────────────────────────────────────────────────────
+
+export function getSectionCardFormattingPrompt(cardType: "before" | "after"): string {
+  if (cardType === "after") {
+    return `Formatting for readability:
+- The very first sentence must be plain text (no markdown) and state the narrative fact.
+- After that first sentence, use light markdown with short paragraphs.
+- Bold 2-4 key phrases using **bold** to guide the eye.
+- Optional: include one brief markdown heading (###) if it helps clarity.
+- Keep the voice literary and conversational, not list-heavy or textbook.`;
+  }
+
+  return `Formatting for readability:
+- Use light markdown with short paragraphs.
+- Bold 2-4 key phrases using **bold** to guide the eye.
+- Optional: include one brief markdown heading (###) if it helps clarity.
+- Keep the voice literary and conversational, not list-heavy or textbook.`;
+}
+
 // ── Legacy helpers (kept for compatibility) ───────────────────────────────────
 
 export function getSystemPrompt(level: KnowledgeLevel): string {
