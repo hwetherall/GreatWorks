@@ -27,6 +27,7 @@
 - [x] Session 5 — Section structure (6 sections), SectionCard before/after, IntersectionObserver lazy loading, section_progress tracking
 - [x] Session 6 — ProgressBar, AnnotationHistory drawer, AchievementToast, gamification schema
 - [x] Session 7 — Pagination in Reader (one section per page, Prev/Next + dots), onSectionVisible fires immediately, max_tokens raised to 1200 for section cards and primer
+- [x] Session 8 — Removed Scroll/Flip mode toggle from ReadingContainer and standardized on the paginated Reader view
 
 ## Next
 
