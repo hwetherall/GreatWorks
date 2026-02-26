@@ -104,8 +104,8 @@ export default function FeedbackModal() {
         aria-label="Leave feedback"
         style={{
           position: "fixed",
-          bottom: "24px",
-          left: "184px",
+          bottom: "68px",
+          left: "24px",
           zIndex: 35,
           background: "#1c1b18",
           border: "1px solid #2a2820",
