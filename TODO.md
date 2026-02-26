@@ -30,6 +30,7 @@
 - [x] Session 8 — Removed Scroll/Flip mode toggle from ReadingContainer and standardized on the paginated Reader view
 - [x] Session 9 — Improved section card readability with markdown formatting guidance, richer markdown rendering styles, and section-primer cache key bump
 - [x] Session 10 — Extended readability formatting to Book I primer, added primer markdown styling, and bumped primer cache key
+- [x] Session 11 — Added user feedback flow: Supabase feedback_submissions migration, typed DB updates, /api/feedback POST route, and Leave Feedback modal with star rating, feedback text, optional name
 
 ## Next
 

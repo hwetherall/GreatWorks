@@ -10,6 +10,7 @@ import Chat from "./Chat";
 import ProgressBar from "./ProgressBar";
 import AnnotationHistory from "./AnnotationHistory";
 import AchievementToast from "./AchievementToast";
+import FeedbackModal from "./FeedbackModal";
 
 const STORAGE_KEY = "greatbooks-knowledge-level";
 const DEFAULT_LEVEL: KnowledgeLevel = "noob";
@@ -126,6 +127,7 @@ export default function ReadingContainer() {
       />
 
       <AnnotationHistory annotationVersion={annotationVersion} />
+      <FeedbackModal />
 
       {toastQueue.length > 0 && (
         <AchievementToast

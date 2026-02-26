@@ -129,6 +129,33 @@ export interface Database {
         Update: { id?: string; cache_key?: string; content?: string; created_at?: string | null; };
         Relationships: [];
       };
+      feedback_submissions: {
+        Row: {
+          id: string;
+          session_id: string;
+          rating: number;
+          feedback_text: string;
+          name: string | null;
+          created_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          session_id: string;
+          rating: number;
+          feedback_text: string;
+          name?: string | null;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          session_id?: string;
+          rating?: number;
+          feedback_text?: string;
+          name?: string | null;
+          created_at?: string | null;
+        };
+        Relationships: [];
+      };
       reading_streaks: {
         Row: { id: string; session_id: string; date: string; sections_completed: number | null; annotations_made: number | null; };
         Insert: { id?: string; session_id: string; date?: string; sections_completed?: number | null; annotations_made?: number | null; };
