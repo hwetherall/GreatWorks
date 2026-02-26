@@ -29,6 +29,7 @@
 - [x] Session 7 — Pagination in Reader (one section per page, Prev/Next + dots), onSectionVisible fires immediately, max_tokens raised to 1200 for section cards and primer
 - [x] Session 8 — Removed Scroll/Flip mode toggle from ReadingContainer and standardized on the paginated Reader view
 - [x] Session 9 — Improved section card readability with markdown formatting guidance, richer markdown rendering styles, and section-primer cache key bump
+- [x] Session 10 — Extended readability formatting to Book I primer, added primer markdown styling, and bumped primer cache key
 
 ## Next
 
